@@ -30,10 +30,10 @@ namespace Application.UseCases
             if (existing != null)
                 throw new InvalidOperationException($"This cat already exist.");
 
-            // verifico se esiste già
-
+            // Mapping verso dominio --> mappo CatDto in Cat
             Cat cat = catDto.ToDomain();
 
+            // Persistenza
             _repository.Add(cat);
         }
         public CatDto? GetByName(string name)

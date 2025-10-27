@@ -13,7 +13,14 @@ namespace Application.Mappers
         public static Adoption ToDomain(this AdoptionDto dto)
         {
             if (dto == null) throw new ArgumentNullException(nameof(dto));
-            
+
+            //Creo l'adozione
+            Adoption adoption = new Adoption(
+                cat: dto.Cat,
+                adoptionDate: dto.AdoptionDate,
+                adopter: dto.Adopter
+            );
+
             throw new NotImplementedException("Mapping from AdoptionDto to Adoption is not implemented yet.");
         }
         public static AdoptionDto ToDto(this Adoption entity)

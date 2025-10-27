@@ -7,6 +7,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Infrastructure.Persistence.Dto;
+using Infrastructure.Persistence.Mapper;
 
 namespace Infrastructure.Persistence.Repositories
 {
@@ -52,11 +53,20 @@ namespace Infrastructure.Persistence.Repositories
         public void Add(Cat cat)
         {
             EnsureLoaded();
-            throw new NotImplementedException();
+
+            // Controllo duplicati case-insensitive - Repository non fa logica di business si limita a sollevare una exception
+            if (_cache.ContainsKey(cat.Name))
+                throw new InvalidOperationException($"Cat '{cat.Name}' already exist.");
+
+            //aggiungo il gatto alla cache
+            _cache[cat.Name] = cat;
+            //rendo persistente l'aggiunta nel file
+            SaveToFile();
         }
         public List<Cat> GetAll()
         {
             EnsureLoaded();
+
             return _cache.Values.ToList();
         }
         public Cat? GetByNameCat(string name)
@@ -66,6 +76,17 @@ namespace Infrastructure.Persistence.Repositories
             Cat? cat;
             _cache.TryGetValue(name, out cat);
             return cat;
+        }
+        private void SaveToFile()
+        {
+            /*
+             * _cache.Values --> tutti i cat del dictionary
+             * c => c.ToPersistenceDto() --> per ogni cat restituisce il dto di persistenza
+             * dtos è la lista di tutti i dto dei cat presenti nella cache
+             */
+            var dtos = _cache.Values.Select(c => c.ToDto()).ToList();
+            var json = JsonSerializer.Serialize(dtos, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(_filePath, json);
         }
     }
 }

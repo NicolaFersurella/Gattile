@@ -25,9 +25,6 @@ namespace Application.Mappers
                 description: dto.Description
             );
 
-            //Creo le liste delle visite, associando il Cat
-            //per ogni AdoptionDto presente in dto creo un oggetto Adoption
-            //e lo metto in una lista
             throw new NotImplementedException();
         }
         public static CatDto ToDto(this Cat entity)

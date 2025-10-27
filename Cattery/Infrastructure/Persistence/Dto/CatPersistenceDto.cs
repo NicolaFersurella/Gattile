@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain.Model.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,15 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Persistence.Dto
 {
-    public record CatPersistenceDto
-    {
-    }
+    public record CatPersistenceDto(
+        string Name,
+        string Breed,
+        Gender Gender,
+        DateTime ArrivalDate,
+        DateTime? LeaveDate,
+        DateTime? BirthDate,
+        int? ProbablyYear,
+        string? Description,
+        List<Adoption>? Adoptions = null
+    );
 }
