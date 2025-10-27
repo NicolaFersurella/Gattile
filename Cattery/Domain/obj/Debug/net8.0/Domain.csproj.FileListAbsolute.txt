@@ -1,0 +1,22 @@
+C:\Users\Utente\Desktop\Esercizi Informatica\gestione gatti clean architecture\Cattery\Domain\bin\Debug\net8.0\Domain.deps.json
+C:\Users\Utente\Desktop\Esercizi Informatica\gestione gatti clean architecture\Cattery\Domain\bin\Debug\net8.0\Domain.dll
+C:\Users\Utente\Desktop\Esercizi Informatica\gestione gatti clean architecture\Cattery\Domain\bin\Debug\net8.0\Domain.pdb
+C:\Users\Utente\Desktop\Esercizi Informatica\gestione gatti clean architecture\Cattery\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Utente\Desktop\Esercizi Informatica\gestione gatti clean architecture\Cattery\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
+C:\Users\Utente\Desktop\Esercizi Informatica\gestione gatti clean architecture\Cattery\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
+C:\Users\Utente\Desktop\Esercizi Informatica\gestione gatti clean architecture\Cattery\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\Utente\Desktop\Esercizi Informatica\gestione gatti clean architecture\Cattery\Domain\obj\Debug\net8.0\Domain.dll
+C:\Users\Utente\Desktop\Esercizi Informatica\gestione gatti clean architecture\Cattery\Domain\obj\Debug\net8.0\refint\Domain.dll
+C:\Users\Utente\Desktop\Esercizi Informatica\gestione gatti clean architecture\Cattery\Domain\obj\Debug\net8.0\Domain.pdb
+C:\Users\Utente\Desktop\Esercizi Informatica\gestione gatti clean architecture\Cattery\Domain\obj\Debug\net8.0\ref\Domain.dll
+C:\Users\nicola.fersurella\Downloads\Cattery (1)\Cattery\Domain\bin\Debug\net8.0\Domain.deps.json
+C:\Users\nicola.fersurella\Downloads\Cattery (1)\Cattery\Domain\bin\Debug\net8.0\Domain.dll
+C:\Users\nicola.fersurella\Downloads\Cattery (1)\Cattery\Domain\bin\Debug\net8.0\Domain.pdb
+C:\Users\nicola.fersurella\Downloads\Cattery (1)\Cattery\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nicola.fersurella\Downloads\Cattery (1)\Cattery\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
+C:\Users\nicola.fersurella\Downloads\Cattery (1)\Cattery\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
+C:\Users\nicola.fersurella\Downloads\Cattery (1)\Cattery\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\nicola.fersurella\Downloads\Cattery (1)\Cattery\Domain\obj\Debug\net8.0\Domain.dll
+C:\Users\nicola.fersurella\Downloads\Cattery (1)\Cattery\Domain\obj\Debug\net8.0\refint\Domain.dll
+C:\Users\nicola.fersurella\Downloads\Cattery (1)\Cattery\Domain\obj\Debug\net8.0\Domain.pdb
+C:\Users\nicola.fersurella\Downloads\Cattery (1)\Cattery\Domain\obj\Debug\net8.0\ref\Domain.dll
