@@ -10,7 +10,7 @@ namespace Application.Mappers
 {
     public static class AdoptionMapper
     {
-        public static Adoption ToDomain(this AdoptionDto dto)
+        public static Adoption ToDomain(this AdoptionDto dto, Cat cat)
         {
             if (dto == null) throw new ArgumentNullException(nameof(dto));
 
