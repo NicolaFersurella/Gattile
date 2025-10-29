@@ -11,5 +11,6 @@ namespace Application.Interfaces
     {
         void Add(Adoption adoption);
         void ManageFailure(Adoption adoption);
+        Adoption? GetByCatAdoption(Cat cat);
     }
 }

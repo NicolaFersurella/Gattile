@@ -44,12 +44,29 @@ namespace Application.Mappers
 
             return cat;
         }
+
         public static CatDto ToDto(this Cat entity)
         {
             if (entity == null) throw new ArgumentNullException(nameof(entity));
 
-            throw new NotImplementedException("Mapping from Cat to CatDto is not implemented yet.");
+            List<AdoptionDto> adoption = new List<AdoptionDto>();
+            foreach (Adoption a in entity.Adoptions)
+            {
+                AdoptionDto adoptionDto = a.ToDto();
+                adoption.Add(adoptionDto);
+            }
 
+            return new CatDto(
+                Name: entity.Name,
+                Breed: entity.Breed,
+                Gender: entity.Gender,
+                ArrivalDate: entity.ArrivalDate,
+                LeaveDate: entity.LeaveDate,
+                BirthDate: entity.BirthDate,
+                ProbablyYear: entity.ProbablyYear,
+                Description: entity.Description,
+                Adoptions: adoption 
+            );
         }
     }
 }

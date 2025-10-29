@@ -27,13 +27,22 @@ namespace Application.Mappers
                 city: dto.City
             );
 
-            throw new NotImplementedException("Mapping from AdoptionDto to Adoption is not implemented yet.");
+            return adopter;
         }
         public static AdopterDto ToDto(this Adopter entity)
         {
             if (entity == null) throw new ArgumentNullException(nameof(entity));
 
-            throw new NotImplementedException("Mapping from Adoption to AdoptionDto is not implemented yet.");
+            return new AdopterDto(
+                Fc: entity.Fc,
+                Name: entity.Name,
+                Surname: entity.Surname,
+                Phone: entity.Phone,
+                Email: entity.Email,
+                Address: entity.Address,
+                Cap: entity.Cap,
+                City: entity.City
+            );
         }
     }
 }

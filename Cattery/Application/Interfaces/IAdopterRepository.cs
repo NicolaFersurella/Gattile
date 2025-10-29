@@ -10,5 +10,7 @@ namespace Application.Interfaces
     public interface IAdopterRepository
     {
         void Add(Adopter adopter);
+        void Remove(Adopter adopter);
+        Adopter? GetByNameAdopter(string name);
     }
 }

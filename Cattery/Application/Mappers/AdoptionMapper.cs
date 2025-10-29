@@ -21,13 +21,17 @@ namespace Application.Mappers
                 adopter: dto.Adopter
             );
 
-            throw new NotImplementedException("Mapping from AdoptionDto to Adoption is not implemented yet.");
+            return adoption;
         }
         public static AdoptionDto ToDto(this Adoption entity)
         {
             if (entity == null) throw new ArgumentNullException(nameof(entity));
 
-            throw new NotImplementedException("Mapping from Adoption to AdoptionDto is not implemented yet.");
+            return new AdoptionDto(
+                Cat: entity.Cat,
+                AdoptionDate: entity.AdoptionDate,
+                Adopter: entity.Adopter
+            );
         }
     }
 }

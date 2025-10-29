@@ -1,23 +1,21 @@
 ﻿using Application.Interfaces;
 using Domain.Model.Entities;
+using Infrastructure.Persistence.Dto;
+using Infrastructure.Persistence.Mapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-using Infrastructure.Persistence.Dto;
-using Infrastructure.Persistence.Mapper;
 
 namespace Infrastructure.Persistence.Repositories
 {
-    public class JsonCatRepository : ICatRepository
+    public class JsonAdoptionRepository : IAdoptionRepository
     {
-        private readonly string _filePath = "cats.json";
-        //La chiave del dizionario è l'ID (string) del gatto. Il valore è l’entità di dominio Cat.
-        //Le operazioni di un cat vengono svolte in O(1).
-        //StringComparer.OrdinalIgnoreCase Serve a rendere la chiave case-insensitive.
-        private readonly Dictionary<string, Cat> _cache = new(StringComparer.OrdinalIgnoreCase);
+        private readonly string _filePath = "adoptions.json";
+
+        private readonly Dictionary<string, Adoption> _cache = new(StringComparer.OrdinalIgnoreCase);
         private bool _initialized = false;
 
         /// <summary>
@@ -37,45 +35,41 @@ namespace Infrastructure.Persistence.Repositories
             //tiro fuori il contenuto dle file sotto forma di stringa
             var json = File.ReadAllText(_filePath);
             //deserializzo il contenuto del file in una lista di dto
-            var dtos = JsonSerializer.Deserialize<List<CatPersistenceDto>>(json) ?? new List<CatPersistenceDto>();
+            var dtos = JsonSerializer.Deserialize<List<AdoptionPersistenceDto>>(json) ?? new List<AdoptionPersistenceDto>();
 
             //per ogni dto
             foreach (var dto in dtos)
             {
                 //lo strasformo in oggetto cat
-                Cat cat = dto.ToEntity(); // Mapper Persistence DTO -> Domain
-                                                //lo aggiungo alla cache
-                _cache[cat.Name] = cat;
+                Adoption adoption = dto.ToEntity(); // Mapper Persistence DTO -> Domain
+                //lo aggiungo alla cache
+                _cache[adoption.Cat] = adoption;
             }
 
             _initialized = true;
         }
-        public void Add(Cat cat)
+        public void Add(Adoption adoption)
         {
             EnsureLoaded();
 
-            // Controllo duplicati case-insensitive - Repository non fa logica di business si limita a sollevare una exception
-            if (_cache.ContainsKey(cat.Name))
-                throw new InvalidOperationException($"Cat '{cat.Name}' already exist.");
-
-            //aggiungo il gatto alla cache
-            _cache[cat.Name] = cat;
-            //rendo persistente l'aggiunta nel file
+            _cache[adoption.Cat] = adoption;
             SaveToFile();
         }
-        public List<Cat> GetAll()
+        public void MangeFailure(Adoption adoption)
         {
             EnsureLoaded();
 
-            return _cache.Values.ToList();
+            string message = $"(Adozione fallita: {adoption.AdoptionDate})";
+            adoption.Cat.LeaveDate = null;
+            adoption.Cat.Description = message;
+
+
         }
-        public Cat? GetByNameCat(string name)
+        public Adoption? GetByCatName(string catName)
         {
             EnsureLoaded();
-
-            Cat? cat;
-            _cache.TryGetValue(name, out cat);
-            return cat;
+            _cache.TryGetValue(catName, out var adoption);
+            return adoption;
         }
         private void SaveToFile()
         {
