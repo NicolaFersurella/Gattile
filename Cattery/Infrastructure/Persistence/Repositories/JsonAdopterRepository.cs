@@ -69,7 +69,8 @@ namespace Infrastructure.Persistence.Repositories
             EnsureLoaded();
 
             Adopter? adopter;
-            _cache.TryGetValue(fc, out adopter);
+            _cache.TryGetValue(fc.ToString(), out adopter);
+
             return adopter;
         }
         public void Remove(Adopter adopter)
