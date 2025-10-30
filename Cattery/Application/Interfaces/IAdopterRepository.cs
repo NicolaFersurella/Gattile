@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain.Model.ValueObjects;
 
 namespace Application.Interfaces
 {
@@ -11,6 +12,6 @@ namespace Application.Interfaces
     {
         void Add(Adopter adopter);
         void Remove(Adopter adopter);
-        Adopter? GetByNameAdopter(string name);
+        Adopter? GetByFcAdopter(FiscalCode fc);
     }
 }

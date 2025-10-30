@@ -36,11 +36,6 @@ namespace Application.UseCases
             // Persistenza
             _repository.Add(cat);
         }
-        public CatDto? GetByName(string name)
-        {
-            var entity = _repository.GetByNameCat(name);
-            return entity?.ToDto();
-        }
         public List<CatDto> ViewAll()
         {
             List<CatDto> dtos = new List<CatDto>();

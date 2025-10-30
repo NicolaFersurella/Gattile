@@ -16,13 +16,6 @@ namespace Infrastructure.Persistence.Mapper
         {
             if (entity == null) throw new ArgumentNullException(nameof(entity));
 
-            List<AdoptionDto> adoption = new List<AdoptionDto>();
-            foreach (Adoption a in entity.Adoptions)
-            {
-                AdoptionDto adoptionDto = a.ToDto();
-                adoption.Add(adoptionDto);
-            }
-
             return new CatPersistenceDto(
                 Name: entity.Name,
                 Breed: entity.Breed,
@@ -32,14 +25,13 @@ namespace Infrastructure.Persistence.Mapper
                 BirthDate: entity.BirthDate,
                 ProbablyYear: entity.ProbablyYear,
                 Description: entity.Description,
-                Adoptions: adoption
+                Adoptions: entity.Adoptions?.ToList() //se non è null converte da una readonly a una lista adoption
             );
         }
-        public static Cat ToEntity(this CatPersistenceDto dto)
+        public static Cat ToDomain(this CatPersistenceDto dto)
         {
             if (dto == null) throw new ArgumentNullException(nameof(dto));
 
-            //Creo il gatto senza adozioni
             Cat cat = new Cat(
                 name: dto.Name,
                 breed: dto.Breed,
@@ -47,24 +39,9 @@ namespace Infrastructure.Persistence.Mapper
                 arrivalDate: dto.ArrivalDate,
                 leaveDate: dto.LeaveDate,
                 birthDate: dto.BirthDate,
-                description: dto.Description
+                description: dto.Description,
+                adoptions: dto.Adoptions
             );
-
-            //2️ Creo la lista delle adozioni, associando il gatto concreto
-            //per ogni AdoptionDto presente in dto creo un oggetto Adoption
-            //e lo metto in una lista
-            List<Adoption> adoptionList = new List<Adoption>();
-            foreach (AdoptionDto a in dto.Adoptions)
-            {
-                Adoption adoption = a.ToDomain(cat);
-                adoptionList.Add(adoption);
-            }
-
-            //3️ Aggiungo le adozioni al gatto
-            foreach (var adoption in adoptionList)
-            {
-                cat.AddAdoption(adoption);
-            }
 
             return cat;
         }

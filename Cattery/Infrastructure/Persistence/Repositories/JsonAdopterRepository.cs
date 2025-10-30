@@ -1,5 +1,6 @@
 ﻿using Application.Interfaces;
 using Domain.Model.Entities;
+using Domain.Model.ValueObjects;
 using Infrastructure.Persistence.Dto;
 using Infrastructure.Persistence.Mapper;
 using System;
@@ -63,12 +64,12 @@ namespace Infrastructure.Persistence.Repositories
             //rendo persistente l'aggiunta nel file
             SaveToFile();
         }
-        public Adopter? GetByNameAdopter(string name)
+        public Adopter? GetByFcAdopter(FiscalCode fc)
         {
             EnsureLoaded();
 
             Adopter? adopter;
-            _cache.TryGetValue(name, out adopter);
+            _cache.TryGetValue(fc, out adopter);
             return adopter;
         }
         public void Remove(Adopter adopter)

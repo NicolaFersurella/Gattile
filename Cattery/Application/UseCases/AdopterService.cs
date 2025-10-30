@@ -24,9 +24,9 @@ namespace Application.UseCases
             if (string.IsNullOrEmpty(adopterDto.Name) || string.IsNullOrEmpty(adopterDto.Surname) || string.IsNullOrEmpty(adopterDto.Name) || string.IsNullOrEmpty(adopterDto.City)) throw new ArgumentException("Invalid adopter");
 
             // Verifica se esiste già (business rule → livello application)
-            var existing = _repository.GetByNameAdopter(adopterDto.Name);
+            var existing = _repository.GetByFcAdopter(adopterDto.Fc);
             if (existing != null)
-                throw new InvalidOperationException($"This adopter already exist.");
+                throw new InvalidOperationException("This adopter already exist.");
 
             // Mapping verso dominio --> mappo CatDto in Cat
             Adopter adopter = adopterDto.ToDomain();
@@ -34,16 +34,11 @@ namespace Application.UseCases
             // Persistenza
             _repository.Add(adopter);
         }
-        public AdopterDto? GetByName(string name)
-        {
-            var entity = _repository.GetByNameAdopter(name);
-            return entity?.ToDto();
-        }
         public void RemoveAdopter(AdopterDto adopterDto)
         {
             if (string.IsNullOrEmpty(adopterDto.Name) || string.IsNullOrEmpty(adopterDto.Surname) || string.IsNullOrEmpty(adopterDto.Name) || string.IsNullOrEmpty(adopterDto.City)) throw new ArgumentException("Invalid adopter");
 
-            var entity = _repository.GetByNameAdopter(adopterDto.Name);
+            var entity = _repository.GetByFcAdopter(adopterDto.Fc);
             if (entity == null)
                 throw new InvalidOperationException("Adopter not found.");
 

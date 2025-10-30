@@ -55,6 +55,10 @@ namespace Infrastructure.Persistence.Repositories
             _cache[adoption.Cat] = adoption;
             SaveToFile();
         }
+        public void Remove(Adoption adoption)
+        {
+
+        }
         public void MangeFailure(Adoption adoption)
         {
             EnsureLoaded();
@@ -65,7 +69,7 @@ namespace Infrastructure.Persistence.Repositories
 
 
         }
-        public Adoption? GetByCatName(string catName)
+        public Adoption? GetByCatId(string catId)
         {
             EnsureLoaded();
             _cache.TryGetValue(catName, out var adoption);

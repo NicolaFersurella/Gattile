@@ -10,7 +10,8 @@ namespace Application.Interfaces
     public interface IAdoptionRepository
     {
         void Add(Adoption adoption);
+        void Remove(Adoption adoption);
         void ManageFailure(Adoption adoption);
-        Adoption? GetByCatAdoption(Cat cat);
+        Adoption? GetByCatId(string catId);
     }
 }

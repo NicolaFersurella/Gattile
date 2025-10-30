@@ -43,7 +43,7 @@ namespace Infrastructure.Persistence.Repositories
             foreach (var dto in dtos)
             {
                 //lo strasformo in oggetto cat
-                Cat cat = dto.ToEntity(); // Mapper Persistence DTO -> Domain
+                Cat cat = dto.ToDomain(); // Mapper Persistence DTO -> Domain
                                                 //lo aggiungo alla cache
                 _cache[cat.Name] = cat;
             }

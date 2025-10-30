@@ -15,7 +15,6 @@ namespace Application.Mappers
         {
             if (dto == null) throw new ArgumentNullException(nameof(dto));
 
-            //Creo il gatto senza adozioni
             Cat cat = new Cat(
                 name: dto.Name,
                 breed: dto.Breed,
@@ -23,24 +22,9 @@ namespace Application.Mappers
                 arrivalDate: dto.ArrivalDate,
                 leaveDate: dto.LeaveDate,
                 birthDate: dto.BirthDate,
-                description: dto.Description
+                description: dto.Description,
+                adoptions: dto.Adoptions
             );
-
-            //2️ Creo la lista delle adozioni, associando il gatto concreto
-            //per ogni AdoptionDto presente in dto creo un oggetto Adoption
-            //e lo metto in una lista
-            List<Adoption> adoptionList = new List<Adoption>();
-            foreach (AdoptionDto a in dto.Adoptions)
-            {
-                Adoption adoption = a.ToDomain(cat);
-                adoptionList.Add(adoption);
-            }
-
-            //3️ Aggiungo le adozioni al gatto
-            foreach (var adoption in adoptionList)
-            {
-                cat.AddAdoption(adoption);
-            }
 
             return cat;
         }
@@ -48,13 +32,6 @@ namespace Application.Mappers
         public static CatDto ToDto(this Cat entity)
         {
             if (entity == null) throw new ArgumentNullException(nameof(entity));
-
-            List<AdoptionDto> adoption = new List<AdoptionDto>();
-            foreach (Adoption a in entity.Adoptions)
-            {
-                AdoptionDto adoptionDto = a.ToDto();
-                adoption.Add(adoptionDto);
-            }
 
             return new CatDto(
                 Name: entity.Name,
@@ -65,7 +42,7 @@ namespace Application.Mappers
                 BirthDate: entity.BirthDate,
                 ProbablyYear: entity.ProbablyYear,
                 Description: entity.Description,
-                Adoptions: adoption 
+                Adoptions: entity.Adoptions?.ToList() //se non è null converte da una readonly a una lista adoption
             );
         }
     }

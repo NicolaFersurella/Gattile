@@ -23,31 +23,20 @@ namespace Application.UseCases
         {
             if (adoptionDto.Cat == null || adoptionDto.Adopter == null || adoptionDto.AdoptionDate == default) throw new ArgumentException("Invalid adoption");
 
-            // Verifica se esiste già (business rule → livello application)
-            var existing = _repository.GetByCatAdoption(adoptionDto.Cat);
-            if (existing != null)
-                throw new InvalidOperationException($"This adopter already exist.");
+            var existingAdoption = _repository.GetByCatId(adoptionDto.Cat.Id);
+            if (existingAdoption != null) throw new ArgumentException("Cat already adopted");
 
-            // Mapping verso dominio --> mappo AdoptionDto in Adoption
-            Adoption adoption = adoptionDto.ToDomain();
-
-            // Persistenza
-            _repository.Add(adoption);
+            _repository.Add(adoptionDto.ToDomain(adoptionDto.Cat));
         }
-        public void ManageFailure(AdoptionDto adoptionDto)
+        public void RemoveAdoption(AdoptionDto adoptionDto)
         {
-            if (adoptionDto.Cat == null) throw new ArgumentException("Invalid adoption");
+            if (adoptionDto.Cat == null || adoptionDto.Adopter == null || adoptionDto.AdoptionDate == default) throw new ArgumentException("Invalid adoption");
 
-            var entity = _repository.GetByCatAdoption(adoptionDto.Cat);
-            if (entity == null)
-                throw new InvalidOperationException("Adoption not found.");
+            var adoption = _repository.GetByCatId(adoptionDto.Cat.Id);
+            if (adoption == null) throw new ArgumentException("Cat not found");
 
-            _repository.ManageFailure(entity);
-        }
-        public AdoptionDto? GetByCat(Cat cat)
-        {
-            var entity = _repository.GetByCatAdoption(cat);
-            return entity?.ToDto();
+            _repository.Remove(adoptionDto.ToDomain(adoptionDto.Cat));
+            _repository.ManageFailure(adoptionDto.ToDomain(adoptionDto.Cat));
         }
     }
 }
