@@ -15,10 +15,10 @@ namespace Infrastructure.Persistence.Repositories
     public class JsonAdopterRepository : IAdopterRepository
     {
         private readonly string _filePath = "adopters.json";
-        //La chiave del dizionario è l'ID (string) del adopter. Il valore è l’entità di dominio Adopter.
+        //La chiave del dizionario è il FiscalCode del adopter. Il valore è l’entità di dominio Adopter.
         //Le operazioni di un adopter vengono svolte in O(1).
         //StringComparer.OrdinalIgnoreCase Serve a rendere la chiave case-insensitive.
-        private readonly Dictionary<string, Adopter> _cache = new(StringComparer.OrdinalIgnoreCase);
+        private readonly Dictionary<FiscalCode, Adopter> _cache = new Dictionary<FiscalCode, Adopter>();
         private bool _initialized = false;
 
         /// <summary>
@@ -43,10 +43,10 @@ namespace Infrastructure.Persistence.Repositories
             //per ogni dto
             foreach (var dto in dtos)
             {
-                //lo strasformo in oggetto cat
-                Adopter adopter = dto.ToEntity(); // Mapper Persistence DTO -> Domain
+                //lo strasformo in oggetto adopter
+                Adopter adopter = dto.ToDomain(); // Mapper Persistence DTO -> Domain
                 //lo aggiungo alla cache
-                _cache[adopter.Name] = adopter;
+                _cache[adopter.Fc] = adopter;
             }
 
             _initialized = true;
@@ -56,11 +56,11 @@ namespace Infrastructure.Persistence.Repositories
             EnsureLoaded();
 
             // Controllo duplicati case-insensitive - Repository non fa logica di business si limita a sollevare una exception
-            if (_cache.ContainsKey(adopter.Name))
-                throw new InvalidOperationException($"Adopter '{adopter.Name}' already exist.");
+            if (_cache.ContainsKey(adopter.Fc))
+                throw new InvalidOperationException($"Adopter '{adopter.Fc}' already exist.");
 
             //aggiungo l'adopter alla cache
-            _cache[adopter.Name] = adopter;
+            _cache[adopter.Fc] = adopter;
             //rendo persistente l'aggiunta nel file
             SaveToFile();
         }
@@ -69,7 +69,7 @@ namespace Infrastructure.Persistence.Repositories
             EnsureLoaded();
 
             Adopter? adopter;
-            _cache.TryGetValue(fc.ToString(), out adopter);
+            _cache.TryGetValue(fc, out adopter);
 
             return adopter;
         }
@@ -78,11 +78,11 @@ namespace Infrastructure.Persistence.Repositories
             EnsureLoaded();
 
             // Controllo esistenza - Repository non fa logica di business si limita a sollevare una exception
-            if (!_cache.ContainsKey(adopter.Name))
-                throw new InvalidOperationException($"Adopter '{adopter.Name}' not found.");
+            if (!_cache.ContainsKey(adopter.Fc))
+                throw new InvalidOperationException($"Adopter '{adopter.Fc}' not found.");
 
             //rimuovo l'adopter dalla cache
-            _cache.Remove(adopter.Name);
+            _cache.Remove(adopter.Fc);
             //rendo persistente la rimozione nel file
             SaveToFile();
         }

@@ -1,4 +1,5 @@
 ﻿using Domain.Model.Entities;
+using Domain.Model.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,6 @@ namespace Application.Interfaces
         void Add(Adoption adoption);
         void Remove(Adoption adoption);
         void ManageFailure(Adoption adoption);
-        Adoption? GetByCatId(string catId);
+        Adoption? GetByFiscalCode(FiscalCode fiscalCode);
     }
 }

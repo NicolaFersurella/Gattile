@@ -26,7 +26,7 @@ namespace Infrastructure.Persistence.Mapper
                 City: entity.City
             );
         }
-        public static Adopter ToEntity(this AdopterPersistenceDto dto)
+        public static Adopter ToDomain(this AdopterPersistenceDto dto)
         {
             if (dto == null) throw new ArgumentNullException(nameof(dto));
 

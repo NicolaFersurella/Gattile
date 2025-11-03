@@ -16,9 +16,9 @@ namespace Application.Mappers
 
             //Creo l'adozione
             Adoption adoption = new Adoption(
-                cat: dto.Cat,
+                cat: dto.Cat.ToDomain(),
                 adoptionDate: dto.AdoptionDate,
-                adopter: dto.Adopter
+                adopter: dto.Adopter.ToDomain()
             );
 
             return adoption;
@@ -28,9 +28,9 @@ namespace Application.Mappers
             if (entity == null) throw new ArgumentNullException(nameof(entity));
 
             return new AdoptionDto(
-                Cat: entity.Cat,
+                Cat: entity.Cat.ToDto(),
                 AdoptionDate: entity.AdoptionDate,
-                Adopter: entity.Adopter
+                Adopter: entity.Adopter.ToDto()
             );
         }
     }

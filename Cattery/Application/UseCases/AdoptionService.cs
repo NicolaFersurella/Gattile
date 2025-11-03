@@ -23,20 +23,20 @@ namespace Application.UseCases
         {
             if (adoptionDto.Cat == null || adoptionDto.Adopter == null || adoptionDto.AdoptionDate == default) throw new ArgumentException("Invalid adoption");
 
-            var existingAdoption = _repository.GetByCatId(adoptionDto.Cat.Id);
+            var existingAdoption = _repository.GetByFiscalCode(adoptionDto.Adopter.ToDomain().Fc);
             if (existingAdoption != null) throw new ArgumentException("Cat already adopted");
 
-            _repository.Add(adoptionDto.ToDomain(adoptionDto.Cat));
+            _repository.Add(adoptionDto.ToDomain(adoptionDto.Cat.ToDomain()));
         }
         public void RemoveAdoption(AdoptionDto adoptionDto)
         {
             if (adoptionDto.Cat == null || adoptionDto.Adopter == null || adoptionDto.AdoptionDate == default) throw new ArgumentException("Invalid adoption");
 
-            var adoption = _repository.GetByCatId(adoptionDto.Cat.Id);
+            var adoption = _repository.GetByFiscalCode(adoptionDto.Adopter.ToDomain().Fc);
             if (adoption == null) throw new ArgumentException("Cat not found");
 
-            _repository.Remove(adoptionDto.ToDomain(adoptionDto.Cat));
-            _repository.ManageFailure(adoptionDto.ToDomain(adoptionDto.Cat));
+            _repository.Remove(adoptionDto.ToDomain(adoptionDto.Cat.ToDomain()));
+            _repository.ManageFailure(adoptionDto.ToDomain(adoptionDto.Cat.ToDomain()));
         }
     }
 }

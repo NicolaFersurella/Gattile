@@ -16,20 +16,20 @@ namespace Infrastructure.Persistence.Mapper
             if (entity == null) throw new ArgumentNullException(nameof(entity));
 
             return new AdoptionPersistenceDto(
-                Cat: entity.Cat,
+                Cat: entity.Cat.ToDto(),
                 AdoptionDate: entity.AdoptionDate,
-                Adopter: entity.Adopter
+                Adopter: entity.Adopter.ToDto()
             );
         }
-        public static Adoption ToEntity(this AdoptionPersistenceDto dto)
+        public static Adoption ToDomain(this AdoptionPersistenceDto dto)
         {
             if (dto == null) throw new ArgumentNullException(nameof(dto));
 
             //Creo l'adozione
             Adoption adoption = new Adoption(
-                cat: dto.Cat,
+                cat: dto.Cat.ToDomain(),
                 adoptionDate: dto.AdoptionDate,
-                adopter: dto.Adopter
+                adopter: dto.Adopter.ToDomain()
             );
 
             return adoption;

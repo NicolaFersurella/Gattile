@@ -45,7 +45,7 @@ namespace Infrastructure.Persistence.Repositories
                 //lo strasformo in oggetto cat
                 Cat cat = dto.ToDomain(); // Mapper Persistence DTO -> Domain
                                                 //lo aggiungo alla cache
-                _cache[cat.Name] = cat;
+                _cache[cat.Id] = cat;
             }
 
             _initialized = true;
@@ -55,11 +55,11 @@ namespace Infrastructure.Persistence.Repositories
             EnsureLoaded();
 
             // Controllo duplicati case-insensitive - Repository non fa logica di business si limita a sollevare una exception
-            if (_cache.ContainsKey(cat.Name))
-                throw new InvalidOperationException($"Cat '{cat.Name}' already exist.");
+            if (_cache.ContainsKey(cat.Id))
+                throw new InvalidOperationException($"Cat '{cat.Id}' already exist.");
 
             //aggiungo il gatto alla cache
-            _cache[cat.Name] = cat;
+            _cache[cat.Id] = cat;
             //rendo persistente l'aggiunta nel file
             SaveToFile();
         }

@@ -8,8 +8,8 @@ using Domain.Model.Entities;
 namespace Application.Dto
 {
     public record AdoptionDto(
-        Cat Cat,
+        CatDto Cat,
         DateTime AdoptionDate,
-        Adopter Adopter
+        AdopterDto Adopter
     );
 }

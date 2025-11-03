@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 namespace Infrastructure.Persistence.Dto
 {
     public record AdoptionPersistenceDto(
-        Cat Cat,
+        CatPersistenceDto Cat,
         DateTime AdoptionDate,
-        Adopter Adopter
+        AdopterPersistenceDto Adopter
     );
 }

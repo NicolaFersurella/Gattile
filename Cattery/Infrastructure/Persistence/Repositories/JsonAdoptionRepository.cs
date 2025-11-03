@@ -1,5 +1,6 @@
 ﻿using Application.Interfaces;
 using Domain.Model.Entities;
+using Domain.Model.ValueObjects;
 using Infrastructure.Persistence.Dto;
 using Infrastructure.Persistence.Mapper;
 using System;
@@ -14,8 +15,9 @@ namespace Infrastructure.Persistence.Repositories
     public class JsonAdoptionRepository : IAdoptionRepository
     {
         private readonly string _filePath = "adoptions.json";
-
-        private readonly Dictionary<string, Adoption> _cache = new(StringComparer.OrdinalIgnoreCase);
+        // la key è il FiscalCode dell'adottante
+        // il value è l'adozioni
+        private readonly Dictionary<FiscalCode, Adoption> _cache = new Dictionary<FiscalCode, Adoption>();
         private bool _initialized = false;
 
         /// <summary>
@@ -40,10 +42,10 @@ namespace Infrastructure.Persistence.Repositories
             //per ogni dto
             foreach (var dto in dtos)
             {
-                //lo strasformo in oggetto cat
-                Adoption adoption = dto.ToEntity(); // Mapper Persistence DTO -> Domain
+                //lo strasformo in oggetto Adoption
+                Adoption adoption = dto.ToDomain(); // Mapper Persistence DTO -> Domain
                 //lo aggiungo alla cache
-                _cache[adoption.Cat] = adoption;
+                _cache[adoption.Adopter.Fc] = adoption;
             }
 
             _initialized = true;
@@ -52,14 +54,23 @@ namespace Infrastructure.Persistence.Repositories
         {
             EnsureLoaded();
 
-            _cache[adoption.Cat] = adoption;
+            _cache[adoption.Adopter.Fc] = adoption;
             SaveToFile();
         }
         public void Remove(Adoption adoption)
         {
+            EnsureLoaded();
 
+            // Controllo esistenza - Repository non fa logica di business si limita a sollevare una exception
+            if (!_cache.ContainsKey(adoption.Adopter.Fc))
+                throw new InvalidOperationException($"Adopter with fiscal code '{adoption.Adopter.Fc}' not found.");
+
+            //rimuovo l'adopter dalla cache
+            _cache.Remove(adoption.Adopter.Fc);
+            //rendo persistente la rimozione nel file
+            SaveToFile();
         }
-        public void MangeFailure(Adoption adoption)
+        public void ManageFailure(Adoption adoption)
         {
             EnsureLoaded();
 
@@ -69,10 +80,11 @@ namespace Infrastructure.Persistence.Repositories
 
 
         }
-        public Adoption? GetByCatId(string catId)
+        public Adoption? GetByFiscalCode(FiscalCode fc)
         {
             EnsureLoaded();
-            _cache.TryGetValue(catName, out var adoption);
+
+            _cache.TryGetValue(fc, out var adoption);
             return adoption;
         }
         private void SaveToFile()
