@@ -127,9 +127,9 @@ namespace Domain.Model.Entities
             //ordino prima di salvare la lista
             _adoptions = adoptions ?? new List<Adoption>();
         }
-        public Cat(string name, string breed, Gender gender, DateTime arrivalDate, DateTime? leaveDate, DateTime? birthDate, int probablyYera, string? description, List<Adoption> adoptions = null) : this(name, breed, gender, arrivalDate, leaveDate, birthDate, description, adoptions)
+        public Cat(string name, string breed, Gender gender, DateTime arrivalDate, DateTime? leaveDate, DateTime? birthDate, int probablyYear, string? description, List<Adoption> adoptions = null) : this(name, breed, gender, arrivalDate, leaveDate, birthDate, description, adoptions)
         {
-            ProbablyYear = probablyYera;
+            ProbablyYear = probablyYear;
         }
         private string CreateId()
         {
