@@ -3,6 +3,26 @@
   "WorkspaceRootPath": "C:\\Users\\Utente\\Desktop\\Gattile\\Cattery\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{CADD7463-7122-4780-9339-3E6B7A71D7C8}|TestUseCases\\TestUseCases.csproj|c:\\users\\utente\\desktop\\gattile\\cattery\\testusecases\\testadopterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CADD7463-7122-4780-9339-3E6B7A71D7C8}|TestUseCases\\TestUseCases.csproj|solutionrelative:testusecases\\testadopterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE7597F5-7067-4DB7-BFBC-9C4B318FE642}|Application\\Application.csproj|c:\\users\\utente\\desktop\\gattile\\cattery\\application\\usecases\\adopterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE7597F5-7067-4DB7-BFBC-9C4B318FE642}|Application\\Application.csproj|solutionrelative:application\\usecases\\adopterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CADD7463-7122-4780-9339-3E6B7A71D7C8}|TestUseCases\\TestUseCases.csproj|c:\\users\\utente\\desktop\\gattile\\cattery\\testusecases\\testadoptionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CADD7463-7122-4780-9339-3E6B7A71D7C8}|TestUseCases\\TestUseCases.csproj|solutionrelative:testusecases\\testadoptionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F82A8E2-EE15-41BA-A3A1-1DDB68D01343}|TestMappers\\TestMappers.csproj|c:\\users\\utente\\desktop\\gattile\\cattery\\testmappers\\testadoptionmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F82A8E2-EE15-41BA-A3A1-1DDB68D01343}|TestMappers\\TestMappers.csproj|solutionrelative:testmappers\\testadoptionmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F82A8E2-EE15-41BA-A3A1-1DDB68D01343}|TestMappers\\TestMappers.csproj|c:\\users\\utente\\desktop\\gattile\\cattery\\testmappers\\testadoptermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F82A8E2-EE15-41BA-A3A1-1DDB68D01343}|TestMappers\\TestMappers.csproj|solutionrelative:testmappers\\testadoptermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4F82A8E2-EE15-41BA-A3A1-1DDB68D01343}|TestMappers\\TestMappers.csproj|c:\\users\\utente\\desktop\\gattile\\cattery\\testmappers\\testcatmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4F82A8E2-EE15-41BA-A3A1-1DDB68D01343}|TestMappers\\TestMappers.csproj|solutionrelative:testmappers\\testcatmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -23,16 +43,8 @@
       "RelativeMoniker": "D:0:0:{EE7597F5-7067-4DB7-BFBC-9C4B318FE642}|Application\\Application.csproj|solutionrelative:application\\mappers\\catmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4F82A8E2-EE15-41BA-A3A1-1DDB68D01343}|TestMappers\\TestMappers.csproj|c:\\users\\utente\\desktop\\gattile\\cattery\\testmappers\\testadoptionmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F82A8E2-EE15-41BA-A3A1-1DDB68D01343}|TestMappers\\TestMappers.csproj|solutionrelative:testmappers\\testadoptionmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{EE7597F5-7067-4DB7-BFBC-9C4B318FE642}|Application\\Application.csproj|c:\\users\\utente\\desktop\\gattile\\cattery\\application\\interfaces\\icatrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EE7597F5-7067-4DB7-BFBC-9C4B318FE642}|Application\\Application.csproj|solutionrelative:application\\interfaces\\icatrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F82A8E2-EE15-41BA-A3A1-1DDB68D01343}|TestMappers\\TestMappers.csproj|c:\\users\\utente\\desktop\\gattile\\cattery\\testmappers\\testadoptermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F82A8E2-EE15-41BA-A3A1-1DDB68D01343}|TestMappers\\TestMappers.csproj|solutionrelative:testmappers\\testadoptermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EE7597F5-7067-4DB7-BFBC-9C4B318FE642}|Application\\Application.csproj|c:\\users\\utente\\desktop\\gattile\\cattery\\application\\mappers\\adoptionmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -49,14 +61,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{CADD7463-7122-4780-9339-3E6B7A71D7C8}|TestUseCases\\TestUseCases.csproj|c:\\users\\utente\\desktop\\gattile\\cattery\\testusecases\\testcatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CADD7463-7122-4780-9339-3E6B7A71D7C8}|TestUseCases\\TestUseCases.csproj|solutionrelative:testusecases\\testcatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CADD7463-7122-4780-9339-3E6B7A71D7C8}|TestUseCases\\TestUseCases.csproj|c:\\users\\utente\\desktop\\gattile\\cattery\\testusecases\\testadoptionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CADD7463-7122-4780-9339-3E6B7A71D7C8}|TestUseCases\\TestUseCases.csproj|solutionrelative:testusecases\\testadoptionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CADD7463-7122-4780-9339-3E6B7A71D7C8}|TestUseCases\\TestUseCases.csproj|c:\\users\\utente\\desktop\\gattile\\cattery\\testusecases\\testadopterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CADD7463-7122-4780-9339-3E6B7A71D7C8}|TestUseCases\\TestUseCases.csproj|solutionrelative:testusecases\\testadopterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EE7597F5-7067-4DB7-BFBC-9C4B318FE642}|Application\\Application.csproj|c:\\users\\utente\\desktop\\gattile\\cattery\\application\\interfaces\\iadopterrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -85,10 +89,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{EE7597F5-7067-4DB7-BFBC-9C4B318FE642}|Application\\Application.csproj|c:\\users\\utente\\desktop\\gattile\\cattery\\application\\usecases\\adoptionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EE7597F5-7067-4DB7-BFBC-9C4B318FE642}|Application\\Application.csproj|solutionrelative:application\\usecases\\adoptionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EE7597F5-7067-4DB7-BFBC-9C4B318FE642}|Application\\Application.csproj|c:\\users\\utente\\desktop\\gattile\\cattery\\application\\usecases\\adopterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE7597F5-7067-4DB7-BFBC-9C4B318FE642}|Application\\Application.csproj|solutionrelative:application\\usecases\\adopterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F5C22F74-6BA1-408B-A9B0-BBF9C060BCC7}|Infrastructure\\Infrastructure.csproj|c:\\users\\utente\\desktop\\gattile\\cattery\\infrastructure\\persistence\\mapper\\adoptionpersistencemapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -170,7 +170,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -178,20 +178,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "TestAdopterMapper.cs",
               "DocumentMoniker": "C:\\Users\\Utente\\Desktop\\Gattile\\Cattery\\TestMappers\\TestAdopterMapper.cs",
               "RelativeDocumentMoniker": "TestMappers\\TestAdopterMapper.cs",
               "ToolTip": "C:\\Users\\Utente\\Desktop\\Gattile\\Cattery\\TestMappers\\TestAdopterMapper.cs",
               "RelativeToolTip": "TestMappers\\TestAdopterMapper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEYAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-03T20:39:56.901Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "TestCatService.cs",
               "DocumentMoniker": "C:\\Users\\Utente\\Desktop\\Gattile\\Cattery\\TestUseCases\\TestCatService.cs",
               "RelativeDocumentMoniker": "TestUseCases\\TestCatService.cs",
@@ -204,7 +204,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 2,
               "Title": "TestAdoptionService.cs",
               "DocumentMoniker": "C:\\Users\\Utente\\Desktop\\Gattile\\Cattery\\TestUseCases\\TestAdoptionService.cs",
               "RelativeDocumentMoniker": "TestUseCases\\TestAdoptionService.cs",
@@ -217,20 +217,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 0,
               "Title": "TestAdopterService.cs",
               "DocumentMoniker": "C:\\Users\\Utente\\Desktop\\Gattile\\Cattery\\TestUseCases\\TestAdopterService.cs",
               "RelativeDocumentMoniker": "TestUseCases\\TestAdopterService.cs",
               "ToolTip": "C:\\Users\\Utente\\Desktop\\Gattile\\Cattery\\TestUseCases\\TestAdopterService.cs",
               "RelativeToolTip": "TestUseCases\\TestAdopterService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAAwB4AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-03T20:18:03.854Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "TestCatMapper.cs",
               "DocumentMoniker": "C:\\Users\\Utente\\Desktop\\Gattile\\Cattery\\TestMappers\\TestCatMapper.cs",
               "RelativeDocumentMoniker": "TestMappers\\TestCatMapper.cs",
@@ -243,7 +243,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "TestAdoptionMapper.cs",
               "DocumentMoniker": "C:\\Users\\Utente\\Desktop\\Gattile\\Cattery\\TestMappers\\TestAdoptionMapper.cs",
               "RelativeDocumentMoniker": "TestMappers\\TestAdoptionMapper.cs",
@@ -292,15 +292,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 1,
               "Title": "AdopterService.cs",
               "DocumentMoniker": "C:\\Users\\Utente\\Desktop\\Gattile\\Cattery\\Application\\UseCases\\AdopterService.cs",
               "RelativeDocumentMoniker": "Application\\UseCases\\AdopterService.cs",
               "ToolTip": "C:\\Users\\Utente\\Desktop\\Gattile\\Cattery\\Application\\UseCases\\AdopterService.cs",
               "RelativeToolTip": "Application\\UseCases\\AdopterService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAA1wCYAAACMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-29T22:43:32.763Z"
+              "WhenOpened": "2025-10-29T22:43:32.763Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -376,7 +377,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "CatService.cs",
               "DocumentMoniker": "C:\\Users\\Utente\\Desktop\\Gattile\\Cattery\\Application\\UseCases\\CatService.cs",
               "RelativeDocumentMoniker": "Application\\UseCases\\CatService.cs",
@@ -389,7 +390,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "AdoptionService.cs",
               "DocumentMoniker": "C:\\Users\\Utente\\Desktop\\Gattile\\Cattery\\Application\\UseCases\\AdoptionService.cs",
               "RelativeDocumentMoniker": "Application\\UseCases\\AdoptionService.cs",
@@ -401,7 +402,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "JsonAdopterRepository.cs",
               "DocumentMoniker": "C:\\Users\\Utente\\Desktop\\Gattile\\Cattery\\Infrastructure\\Persistence\\Repositories\\JsonAdopterRepository.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Persistence\\Repositories\\JsonAdopterRepository.cs",
@@ -414,7 +415,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "JsonAdoptionRepository.cs",
               "DocumentMoniker": "C:\\Users\\Utente\\Desktop\\Gattile\\Cattery\\Infrastructure\\Persistence\\Repositories\\JsonAdoptionRepository.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Persistence\\Repositories\\JsonAdoptionRepository.cs",
@@ -426,7 +427,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "JsonCatRepository.cs",
               "DocumentMoniker": "C:\\Users\\Utente\\Desktop\\Gattile\\Cattery\\Infrastructure\\Persistence\\Repositories\\JsonCatRepository.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Persistence\\Repositories\\JsonCatRepository.cs",
@@ -438,7 +439,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "AdopterMapper.cs",
               "DocumentMoniker": "C:\\Users\\Utente\\Desktop\\Gattile\\Cattery\\Application\\Mappers\\AdopterMapper.cs",
               "RelativeDocumentMoniker": "Application\\Mappers\\AdopterMapper.cs",
@@ -451,7 +452,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "AdoptionMapper.cs",
               "DocumentMoniker": "C:\\Users\\Utente\\Desktop\\Gattile\\Cattery\\Application\\Mappers\\AdoptionMapper.cs",
               "RelativeDocumentMoniker": "Application\\Mappers\\AdoptionMapper.cs",
@@ -464,7 +465,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "CatMapper.cs",
               "DocumentMoniker": "C:\\Users\\Utente\\Desktop\\Gattile\\Cattery\\Application\\Mappers\\CatMapper.cs",
               "RelativeDocumentMoniker": "Application\\Mappers\\CatMapper.cs",
@@ -477,7 +478,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "IAdoptionRepository.cs",
               "DocumentMoniker": "C:\\Users\\Utente\\Desktop\\Gattile\\Cattery\\Application\\Interfaces\\IAdoptionRepository.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\IAdoptionRepository.cs",
@@ -489,7 +490,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "IAdopterRepository.cs",
               "DocumentMoniker": "C:\\Users\\Utente\\Desktop\\Gattile\\Cattery\\Application\\Interfaces\\IAdopterRepository.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\IAdopterRepository.cs",
@@ -502,7 +503,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "ICatRepository.cs",
               "DocumentMoniker": "C:\\Users\\Utente\\Desktop\\Gattile\\Cattery\\Application\\Interfaces\\ICatRepository.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\ICatRepository.cs",
@@ -515,7 +516,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "AdoptionDto.cs",
               "DocumentMoniker": "C:\\Users\\Utente\\Desktop\\Gattile\\Cattery\\Application\\Dto\\AdoptionDto.cs",
               "RelativeDocumentMoniker": "Application\\Dto\\AdoptionDto.cs",
@@ -528,7 +529,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "AdopterDto.cs",
               "DocumentMoniker": "C:\\Users\\Utente\\Desktop\\Gattile\\Cattery\\Application\\Dto\\AdopterDto.cs",
               "RelativeDocumentMoniker": "Application\\Dto\\AdopterDto.cs",
@@ -541,7 +542,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "CatDto.cs",
               "DocumentMoniker": "C:\\Users\\Utente\\Desktop\\Gattile\\Cattery\\Application\\Dto\\CatDto.cs",
               "RelativeDocumentMoniker": "Application\\Dto\\CatDto.cs",
@@ -674,7 +675,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "Cat.cs",
               "DocumentMoniker": "C:\\Users\\Utente\\Desktop\\Gattile\\Cattery\\Domain\\Model\\Entities\\Cat.cs",
               "RelativeDocumentMoniker": "Domain\\Model\\Entities\\Cat.cs",

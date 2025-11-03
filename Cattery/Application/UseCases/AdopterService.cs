@@ -21,7 +21,7 @@ namespace Application.UseCases
         }
         public void CreateAdopter(AdopterDto adopterDto)
         {
-            if (string.IsNullOrEmpty(adopterDto.Name) || string.IsNullOrEmpty(adopterDto.Surname) || string.IsNullOrEmpty(adopterDto.Name) || string.IsNullOrEmpty(adopterDto.City)) throw new ArgumentException("Invalid adopter");
+            if (string.IsNullOrEmpty(adopterDto.Name) || string.IsNullOrEmpty(adopterDto.Surname) || string.IsNullOrEmpty(adopterDto.Address) || string.IsNullOrEmpty(adopterDto.City)) throw new ArgumentException("Invalid adopter");
 
             // Verifica se esiste già (business rule → livello application)
             var existing = _repository.GetByFcAdopter(adopterDto.Fc);
@@ -36,7 +36,7 @@ namespace Application.UseCases
         }
         public void RemoveAdopter(AdopterDto adopterDto)
         {
-            if (string.IsNullOrEmpty(adopterDto.Name) || string.IsNullOrEmpty(adopterDto.Surname) || string.IsNullOrEmpty(adopterDto.Name) || string.IsNullOrEmpty(adopterDto.City)) throw new ArgumentException("Invalid adopter");
+            if (string.IsNullOrEmpty(adopterDto.Name) || string.IsNullOrEmpty(adopterDto.Surname) || string.IsNullOrEmpty(adopterDto.Address) || string.IsNullOrEmpty(adopterDto.City)) throw new ArgumentException("Invalid adopter");
 
             var entity = _repository.GetByFcAdopter(adopterDto.Fc);
             if (entity == null)
