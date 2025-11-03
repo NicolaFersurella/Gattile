@@ -20,3 +20,15 @@ C:\Users\nicola.fersurella\Downloads\Cattery (1)\Cattery\Domain\obj\Debug\net8.0
 C:\Users\nicola.fersurella\Downloads\Cattery (1)\Cattery\Domain\obj\Debug\net8.0\refint\Domain.dll
 C:\Users\nicola.fersurella\Downloads\Cattery (1)\Cattery\Domain\obj\Debug\net8.0\Domain.pdb
 C:\Users\nicola.fersurella\Downloads\Cattery (1)\Cattery\Domain\obj\Debug\net8.0\ref\Domain.dll
+C:\Users\Utente\Desktop\Gattile\Cattery\Domain\bin\Debug\net8.0\Domain.deps.json
+C:\Users\Utente\Desktop\Gattile\Cattery\Domain\bin\Debug\net8.0\Domain.dll
+C:\Users\Utente\Desktop\Gattile\Cattery\Domain\bin\Debug\net8.0\Domain.pdb
+C:\Users\Utente\Desktop\Gattile\Cattery\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Utente\Desktop\Gattile\Cattery\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
+C:\Users\Utente\Desktop\Gattile\Cattery\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
+C:\Users\Utente\Desktop\Gattile\Cattery\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\Utente\Desktop\Gattile\Cattery\Domain\obj\Debug\net8.0\Domain.sourcelink.json
+C:\Users\Utente\Desktop\Gattile\Cattery\Domain\obj\Debug\net8.0\Domain.dll
+C:\Users\Utente\Desktop\Gattile\Cattery\Domain\obj\Debug\net8.0\refint\Domain.dll
+C:\Users\Utente\Desktop\Gattile\Cattery\Domain\obj\Debug\net8.0\Domain.pdb
+C:\Users\Utente\Desktop\Gattile\Cattery\Domain\obj\Debug\net8.0\ref\Domain.dll
