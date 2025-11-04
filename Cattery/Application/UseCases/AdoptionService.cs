@@ -21,6 +21,7 @@ namespace Application.UseCases
         }
         public void CreateAdoption(AdoptionDto adoptionDto)
         {
+            // controllo se il gatto e l'adottante non sono nulli e la data di adozione è valida
             if (adoptionDto.Cat == null || adoptionDto.Adopter == null || adoptionDto.AdoptionDate == default) throw new ArgumentException("Invalid adoption");
 
             var existingAdoption = _repository.GetByFiscalCode(adoptionDto.Adopter.ToDomain().Fc);
