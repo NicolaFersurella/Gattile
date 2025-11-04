@@ -17,25 +17,25 @@ namespace TestMappers
         public void TestToDomain_WithValidDto_ReturnsCorrectAdopter()
         {
             AdopterDto dto = new AdopterDto(
-                Fc: new Domain.Model.ValueObjects.FiscalCode("RSSMRA85M01H501U"),
-                Name: "Mimmo",
-                Surname: "Rossi",
-                Phone: new Domain.Model.ValueObjects.PhoneNumber("3534066278"),
-                Email: new Domain.Model.ValueObjects.Email("utente.utente@gmail.it"),
-                Address: "Via Roma 1",
-                Cap: new Domain.Model.ValueObjects.Cap("00100"),
+                Fc: "RSSMRA85M01H501U",
+                Name: "Luca",
+                Surname: "Diddi",
+                Phone: "3534066278",
+                Email: "utente.utente@gmail.it",
+                Address: "Via Franco 1",
+                Cap: "00100",
                 City: "Roma"
             );
 
             Adopter adopter = new Adopter(
-                fc: dto.Fc,
-                name: dto.Name,
-                surname: dto.Surname,
-                number: dto.Phone,
-                email: dto.Email,
-                address: dto.Address,
-                cap: dto.Cap,
-                city: dto.City
+                fc: new Domain.Model.ValueObjects.FiscalCode("RSSMRA85M01H501U"),
+                name: "Luca",
+                surname: "Diddi",
+                number: new Domain.Model.ValueObjects.PhoneNumber("3534066278"),
+                email: new Domain.Model.ValueObjects.Email("utente.utente@gmail.it"),
+                address: "Via Franco 1",
+                cap: new Domain.Model.ValueObjects.Cap("00100"),
+                city: "Roma"
             );
 
             Assert.AreEqual(adopter, dto.ToDomain());
@@ -62,14 +62,14 @@ namespace TestMappers
             );
 
             AdopterDto dto = new AdopterDto(
-                Fc: adopter.Fc,
-                Name: adopter.Name,
-                Surname: adopter.Surname,
-                Phone: adopter.Phone,
-                Email: adopter.Email,
-                Address: adopter.Address,
-                Cap: adopter.Cap,
-                City: adopter.City
+                Fc: "RSSMRA85M01H501U",
+                Name: "Luca",
+                Surname: "Diddi",
+                Phone: "3534066278",
+                Email: "utente.utente@gmail.it",
+                Address: "Via Franco 1",
+                Cap: "00100",
+                City: "Roma"
             );
 
             Assert.AreEqual(dto, adopter.ToDto());

@@ -27,7 +27,7 @@ namespace Application.UseCases
             var existingAdoption = _repository.GetByFiscalCode(adoptionDto.Adopter.ToDomain().Fc);
             if (existingAdoption != null) throw new ArgumentException("Cat already adopted");
 
-            _repository.Add(adoptionDto.ToDomain(adoptionDto.Cat.ToDomain()));
+            _repository.Add(adoptionDto.ToDomain());
         }
         public void RemoveAdoption(AdoptionDto adoptionDto)
         {
@@ -36,8 +36,8 @@ namespace Application.UseCases
             var adoption = _repository.GetByFiscalCode(adoptionDto.Adopter.ToDomain().Fc);
             if (adoption == null) throw new ArgumentException("Cat not found");
 
-            _repository.Remove(adoptionDto.ToDomain(adoptionDto.Cat.ToDomain()));
-            _repository.ManageFailure(adoptionDto.ToDomain(adoptionDto.Cat.ToDomain()));
+            _repository.Remove(adoptionDto.ToDomain());
+            _repository.ManageFailure(adoptionDto.ToDomain());
         }
     }
 }

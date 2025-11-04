@@ -16,14 +16,14 @@ namespace Application.Mappers
             if (dto == null) throw new ArgumentNullException(nameof(dto));
 
             Cat cat = new Cat(
-                name: dto.Name,
-                breed: dto.Breed,
-                gender: dto.Gender,
-                arrivalDate: dto.ArrivalDate,
-                leaveDate: dto.LeaveDate,
-                birthDate: dto.BirthDate,
-                description: dto.Description,
-                adoptions: dto.Adoptions
+                dto.Name,
+                dto.Breed,
+                dto.Gender,
+                dto.ArrivalDate,
+                dto.LeaveDate,
+                dto.BirthDate,
+                dto.Description,
+                dto.Adoptions
             );
 
             return cat;
@@ -34,15 +34,15 @@ namespace Application.Mappers
             if (entity == null) throw new ArgumentNullException(nameof(entity));
 
             return new CatDto(
-                Name: entity.Name,
-                Breed: entity.Breed,
-                Gender: entity.Gender,
-                ArrivalDate: entity.ArrivalDate,
-                LeaveDate: entity.LeaveDate,
-                BirthDate: entity.BirthDate,
-                ProbablyYear: entity.ProbablyYear,
-                Description: entity.Description,
-                Adoptions: entity.Adoptions?.ToList() //se non è null converte da una readonly a una lista adoption
+                entity.Name,
+                entity.Breed,
+                entity.Gender,
+                entity.ArrivalDate,
+                entity.LeaveDate,
+                entity.BirthDate,
+                entity.ProbablyYear,
+                entity.Description,
+                entity.Adoptions?.ToList() //se non è null converte da una readonly a una lista adoption
             );
         }
     }

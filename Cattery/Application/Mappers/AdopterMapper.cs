@@ -16,32 +16,30 @@ namespace Application.Mappers
             if (dto == null) throw new ArgumentNullException(nameof(dto));
 
             //Creo l'adottante
-            Adopter adopter = new Adopter(
-                fc: dto.Fc,
-                name: dto.Name,
-                surname: dto.Surname,
-                number: dto.Phone,
-                email: dto.Email,
-                address: dto.Address,
-                cap: dto.Cap,
-                city: dto.City
+            return new Adopter(
+                new FiscalCode(dto.Fc),
+                dto.Name,
+                dto.Surname,
+                new PhoneNumber(dto.Phone),
+                new Email(dto.Email),
+                dto.Address,
+                new Cap(dto.Cap),
+                dto.City
             );
-
-            return adopter;
         }
         public static AdopterDto ToDto(this Adopter entity)
         {
             if (entity == null) throw new ArgumentNullException(nameof(entity));
 
             return new AdopterDto(
-                Fc: entity.Fc,
-                Name: entity.Name,
-                Surname: entity.Surname,
-                Phone: entity.Phone,
-                Email: entity.Email,
-                Address: entity.Address,
-                Cap: entity.Cap,
-                City: entity.City
+                entity.Fc.Value,
+                entity.Name,
+                entity.Surname,
+                entity.Phone.Value,
+                entity.Email.Value,
+                entity.Address,
+                entity.Cap.Value,
+                entity.City
             );
         }
     }

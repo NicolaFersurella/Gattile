@@ -65,11 +65,9 @@ namespace TestUseCases
             repo.Add(dto1.ToDomain());
             repo.Add(dto2.ToDomain());
 
-           List<CatDto> excpectedResult = new List<CatDto>();
-           excpectedResult.Add(dto1);
-           excpectedResult.Add(dto2);
+           List<CatDto> excpectedResult = new List<CatDto>() { dto1, dto2 };
 
-           Assert.AreEqual(excpectedResult, service.ViewAll());
+            Assert.AreEqual(excpectedResult, service.ViewAll());
         }
     }
 }

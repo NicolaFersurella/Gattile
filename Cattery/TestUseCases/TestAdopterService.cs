@@ -16,13 +16,13 @@ namespace TestUseCases
             AdopterService service = new AdopterService(repo);
 
             AdopterDto dto = new AdopterDto(
-                Fc: new Domain.Model.ValueObjects.FiscalCode("RSSMRA85M01H501U"),
+                Fc: "RSSMRA85M01H501U",
                 Name: "",
                 Surname: "",
-                Phone: new Domain.Model.ValueObjects.PhoneNumber("3534066278"),
-                Email: new Domain.Model.ValueObjects.Email("utente.utente@gmail.it"),
+                Phone: "3534066278",
+                Email: "utente.utente@gmail.it",
                 Address: "Via Roma 1",
-                Cap: new Domain.Model.ValueObjects.Cap("00100"),
+                Cap: "00100",
                 City: "Roma"
             );
 
@@ -36,13 +36,13 @@ namespace TestUseCases
             AdopterService service = new AdopterService(repo);
 
             AdopterDto dto = new AdopterDto(
-                Fc: new Domain.Model.ValueObjects.FiscalCode("RSSMRA85M01H501U"),
+                Fc: "RSSMRA85M01H501U",
                 Name: "",
                 Surname: "",
-                Phone: new Domain.Model.ValueObjects.PhoneNumber("3534066278"),
-                Email: new Domain.Model.ValueObjects.Email("utente.utente@gmail.it"),
+                Phone: "3534066278",
+                Email: "utente.utente@gmail.it",
                 Address: "Via Roma 1",
-                Cap: new Domain.Model.ValueObjects.Cap("00100"),
+                Cap: "00100",
                 City: "Roma"
             );
 

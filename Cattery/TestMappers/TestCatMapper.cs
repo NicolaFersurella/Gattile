@@ -34,13 +34,13 @@ namespace TestMappers
             );
 
             Cat cat = new Cat(
-                name: dto.Name,
-                breed: dto.Breed,
-                gender: dto.Gender,
-                arrivalDate: dto.ArrivalDate,
-                leaveDate: dto.LeaveDate,
-                birthDate: dto.BirthDate,
-                description: dto.Description
+                dto.Name,
+                dto.Breed,
+                dto.Gender,
+                dto.ArrivalDate,
+                dto.LeaveDate,
+                dto.BirthDate,
+                dto.Description
             );
 
             Assert.AreEqual(cat, dto.ToDomain());

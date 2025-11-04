@@ -18,55 +18,45 @@ namespace TestMappers
         {
             AdoptionDto dto = null;
 
-            Cat cat = new Cat(
-                name: "Pippo",
-                breed: "Siamese",
-                gender: Gender.MALE,
-                arrivalDate: new DateTime(2020, 6, 1),
-                leaveDate: new DateTime(2020, 12, 1),
-                birthDate: new DateTime(2020, 1, 1),
-                description: "A friendly cat"
-            );
-
-            Assert.ThrowsException<ArgumentNullException>(() => dto.ToDomain(cat));
+            Assert.ThrowsException<ArgumentNullException>(() => dto.ToDomain());
         }
         [TestMethod]
         public void TestToDomain_WithValidDto_ReturnsCorrectAdoption()
         {
             Cat cat = new Cat(
-                name: "Pippo",
-                breed: "Siamese",
-                gender: Gender.MALE,
-                arrivalDate: new DateTime(2020, 6, 1),
-                leaveDate: new DateTime(2020, 12, 1),
-                birthDate: new DateTime(2020, 1, 1),
-                description: "A friendly cat"
+                "Pippo",
+                "Siamese",
+                Gender.MALE,
+                new DateTime(2020, 6, 1),
+                new DateTime(2020, 12, 1),
+                new DateTime(2020, 1, 1),
+                "A friendly cat"
             );
 
             AdopterDto adopterDto = new AdopterDto(
-                Fc: new Domain.Model.ValueObjects.FiscalCode("RSSMRA85M01H501U"),
-                Name: "Mimmo",
-                Surname: "Rossi",
-                Phone: new Domain.Model.ValueObjects.PhoneNumber("3534066278"),
-                Email: new Domain.Model.ValueObjects.Email("utente.utente@gmail.it"),
-                Address: "Via Roma 1",
-                Cap: new Domain.Model.ValueObjects.Cap("00100"),
-                City: "Roma"
+                "RSSMRA85M01H501U",
+                "Luca",
+                "Diddi",
+                "3534066278",
+                "utente.utente@gmail.it",
+                "Via Franco 1",
+                "00100",
+                "Roma"
             );
 
             AdoptionDto dto = new AdoptionDto(
-                Cat: cat.ToDto(),
-                AdoptionDate: new DateTime(2020, 12, 1),
-                Adopter: adopterDto
+                cat.ToDto(),
+                new DateTime(2020, 12, 1),
+                adopterDto
             );
             
             Adoption expectedAdoption = new Adoption(
-                cat: cat,
-                adoptionDate: dto.AdoptionDate,
-                adopter: adopterDto.ToDomain()
+                cat,
+                dto.AdoptionDate,
+                adopterDto.ToDomain()
             );
 
-            Assert.AreEqual(expectedAdoption, dto.ToDomain(cat));
+            Assert.AreEqual(expectedAdoption, dto.ToDomain());
         }
         [TestMethod]
         public void TestToDto_WithEntityNull_ThrowsArgumentNullException()
@@ -99,13 +89,13 @@ namespace TestMappers
             );
 
             AdopterDto adopterDto = new AdopterDto(
-                Fc: new Domain.Model.ValueObjects.FiscalCode("RSSMRA85M01H501U"),
-                Name: "Mimmo",
-                Surname: "Rossi",
-                Phone: new Domain.Model.ValueObjects.PhoneNumber("3534066278"),
-                Email: new Domain.Model.ValueObjects.Email("utente.utente@gmail.it"),
-                Address: "Via Roma 1",
-                Cap: new Domain.Model.ValueObjects.Cap("00100"),
+                Fc: "RSSMRA85M01H501U",
+                Name: "Luca",
+                Surname: "Diddi",
+                Phone: "3534066278",
+                Email: "utente.utente@gmail.it",
+                Address: "Via Franco 1",
+                Cap: "00100",
                 City: "Roma"
             );
 

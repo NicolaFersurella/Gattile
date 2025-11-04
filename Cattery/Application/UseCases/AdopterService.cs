@@ -24,7 +24,7 @@ namespace Application.UseCases
             if (string.IsNullOrEmpty(adopterDto.Name) || string.IsNullOrEmpty(adopterDto.Surname) || string.IsNullOrEmpty(adopterDto.Address) || string.IsNullOrEmpty(adopterDto.City)) throw new ArgumentException("Invalid adopter");
 
             // Verifica se esiste già (business rule → livello application)
-            var existing = _repository.GetByFcAdopter(adopterDto.Fc);
+            var existing = _repository.GetByFcAdopter(new Domain.Model.ValueObjects.FiscalCode(adopterDto.Fc));
             if (existing != null)
                 throw new InvalidOperationException("This adopter already exist.");
 
@@ -38,7 +38,7 @@ namespace Application.UseCases
         {
             if (string.IsNullOrEmpty(adopterDto.Name) || string.IsNullOrEmpty(adopterDto.Surname) || string.IsNullOrEmpty(adopterDto.Address) || string.IsNullOrEmpty(adopterDto.City)) throw new ArgumentException("Invalid adopter");
 
-            var entity = _repository.GetByFcAdopter(adopterDto.Fc);
+            var entity = _repository.GetByFcAdopter(new Domain.Model.ValueObjects.FiscalCode(adopterDto.Fc));
             if (entity == null)
                 throw new InvalidOperationException("Adopter not found.");
 
