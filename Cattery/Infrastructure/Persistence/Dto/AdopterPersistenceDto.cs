@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 namespace Infrastructure.Persistence.Dto
 {
     public record AdopterPersistenceDto(
-        FiscalCode Fc,
+        string Fc,
         string Name,
         string Surname,
-        PhoneNumber Phone,
-        Email Email,
+        string Phone,
+        string Email,
         string Address,
-        Cap Cap,
+        string Cap,
         string City
     );
 }
