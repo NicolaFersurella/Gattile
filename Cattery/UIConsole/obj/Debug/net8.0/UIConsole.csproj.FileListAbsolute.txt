@@ -42,3 +42,26 @@ C:\Users\nicola.fersurella\Downloads\Cattery (1)\Cattery\UIConsole\obj\Debug\net
 C:\Users\nicola.fersurella\Downloads\Cattery (1)\Cattery\UIConsole\obj\Debug\net8.0\UIConsole.pdb
 C:\Users\nicola.fersurella\Downloads\Cattery (1)\Cattery\UIConsole\obj\Debug\net8.0\UIConsole.genruntimeconfig.cache
 C:\Users\nicola.fersurella\Downloads\Cattery (1)\Cattery\UIConsole\obj\Debug\net8.0\ref\UIConsole.dll
+C:\Users\nicola.fersurella\Desktop\Gattile\Cattery\UIConsole\bin\Debug\net8.0\UIConsole.exe
+C:\Users\nicola.fersurella\Desktop\Gattile\Cattery\UIConsole\bin\Debug\net8.0\UIConsole.deps.json
+C:\Users\nicola.fersurella\Desktop\Gattile\Cattery\UIConsole\bin\Debug\net8.0\UIConsole.runtimeconfig.json
+C:\Users\nicola.fersurella\Desktop\Gattile\Cattery\UIConsole\bin\Debug\net8.0\UIConsole.dll
+C:\Users\nicola.fersurella\Desktop\Gattile\Cattery\UIConsole\bin\Debug\net8.0\UIConsole.pdb
+C:\Users\nicola.fersurella\Desktop\Gattile\Cattery\UIConsole\bin\Debug\net8.0\Application.dll
+C:\Users\nicola.fersurella\Desktop\Gattile\Cattery\UIConsole\bin\Debug\net8.0\Domain.dll
+C:\Users\nicola.fersurella\Desktop\Gattile\Cattery\UIConsole\bin\Debug\net8.0\Infrastructure.dll
+C:\Users\nicola.fersurella\Desktop\Gattile\Cattery\UIConsole\bin\Debug\net8.0\Application.pdb
+C:\Users\nicola.fersurella\Desktop\Gattile\Cattery\UIConsole\bin\Debug\net8.0\Infrastructure.pdb
+C:\Users\nicola.fersurella\Desktop\Gattile\Cattery\UIConsole\bin\Debug\net8.0\Domain.pdb
+C:\Users\nicola.fersurella\Desktop\Gattile\Cattery\UIConsole\obj\Debug\net8.0\UIConsole.csproj.AssemblyReference.cache
+C:\Users\nicola.fersurella\Desktop\Gattile\Cattery\UIConsole\obj\Debug\net8.0\UIConsole.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nicola.fersurella\Desktop\Gattile\Cattery\UIConsole\obj\Debug\net8.0\UIConsole.AssemblyInfoInputs.cache
+C:\Users\nicola.fersurella\Desktop\Gattile\Cattery\UIConsole\obj\Debug\net8.0\UIConsole.AssemblyInfo.cs
+C:\Users\nicola.fersurella\Desktop\Gattile\Cattery\UIConsole\obj\Debug\net8.0\UIConsole.csproj.CoreCompileInputs.cache
+C:\Users\nicola.fersurella\Desktop\Gattile\Cattery\UIConsole\obj\Debug\net8.0\UIConsole.sourcelink.json
+C:\Users\nicola.fersurella\Desktop\Gattile\Cattery\UIConsole\obj\Debug\net8.0\UIConsole.csproj.Up2Date
+C:\Users\nicola.fersurella\Desktop\Gattile\Cattery\UIConsole\obj\Debug\net8.0\UIConsole.dll
+C:\Users\nicola.fersurella\Desktop\Gattile\Cattery\UIConsole\obj\Debug\net8.0\refint\UIConsole.dll
+C:\Users\nicola.fersurella\Desktop\Gattile\Cattery\UIConsole\obj\Debug\net8.0\UIConsole.pdb
+C:\Users\nicola.fersurella\Desktop\Gattile\Cattery\UIConsole\obj\Debug\net8.0\UIConsole.genruntimeconfig.cache
+C:\Users\nicola.fersurella\Desktop\Gattile\Cattery\UIConsole\obj\Debug\net8.0\ref\UIConsole.dll

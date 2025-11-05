@@ -2,6 +2,7 @@
 using Application.Interfaces;
 using Application.Mappers;
 using Domain.Model.Entities;
+using Domain.Model.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,15 +30,29 @@ namespace Application.UseCases
 
             _repository.Add(adoptionDto.ToDomain());
         }
+        public void UpdateAdoption(AdoptionDto adoptionDto)
+        {
+            // controllo se il gatto e l'adottante non sono nulli e la data di adozione è valida
+            if (adoptionDto.Cat == null || adoptionDto.Adopter == null || adoptionDto.AdoptionDate == default) throw new ArgumentException("Invalid adoption");
+
+            _repository.Update(adoptionDto.ToDomain());
+        }
         public void RemoveAdoption(AdoptionDto adoptionDto)
         {
             if (adoptionDto.Cat == null || adoptionDto.Adopter == null || adoptionDto.AdoptionDate == default) throw new ArgumentException("Invalid adoption");
 
             var adoption = _repository.GetByFiscalCode(adoptionDto.Adopter.ToDomain().Fc);
-            if (adoption == null) throw new ArgumentException("Cat not found");
+            if (adoption == null) throw new ArgumentException("Adoption not found");
 
             _repository.Remove(adoptionDto.ToDomain());
-            _repository.ManageFailure(adoptionDto.ToDomain());
+        }
+        public Adoption? GetAdoptionByIdCat(string id)
+        {
+            return _repository.GetById(id);
+        }
+        public IEnumerable<Adoption> GetAdoptionByFiscalCodeAdopter(FiscalCode fiscalCode)
+        {
+            return _repository.GetByFiscalCode(fiscalCode);
         }
     }
 }

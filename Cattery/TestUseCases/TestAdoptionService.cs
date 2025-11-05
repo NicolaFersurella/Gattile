@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Application.Mappers;
+using Infrastructure.Persistence.Repositories;
 
 namespace TestUseCases
 {
@@ -17,7 +18,7 @@ namespace TestUseCases
         [TestMethod]
         public void TestCreateAdoption_WithInvalidAdoptionDto_ThrowsArgumentException()
         {
-            IAdoptionRepository repo;
+            JsonAdoptionRepository repo;
             repo = null!;
             AdoptionService service = new AdoptionService(repo);
 
@@ -32,7 +33,7 @@ namespace TestUseCases
         [TestMethod]
         public void TestRemoveAdoption_WithInvalidAdoptionDto_ThrowsArgumentException()
         {
-            IAdoptionRepository repo;
+            JsonAdoptionRepository repo;
             repo = null!;
             AdoptionService service = new AdoptionService(repo);
 

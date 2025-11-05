@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 namespace Application.Dto
 {
     public record AdopterDto(
-        string Fc,
+        FiscalCode Fc,
         string Name,
         string Surname,
-        string Phone,
-        string Email,
+        PhoneNumber Phone,
+        Email Email,
         string Address,
-        string Cap,
+        Cap Cap,
         string City
     );
 }

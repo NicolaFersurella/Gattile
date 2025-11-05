@@ -64,7 +64,7 @@ namespace Infrastructure.Persistence.Repositories
             //rendo persistente l'aggiunta nel file
             SaveToFile();
         }
-        public Adopter? GetByFcAdopter(FiscalCode fc)
+        public Adopter? GetByFiscalCode(FiscalCode fc)
         {
             EnsureLoaded();
 

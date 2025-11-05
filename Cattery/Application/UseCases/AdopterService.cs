@@ -2,6 +2,7 @@
 using Application.Interfaces;
 using Application.Mappers;
 using Domain.Model.Entities;
+using Domain.Model.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,7 @@ namespace Application.UseCases
             if (string.IsNullOrEmpty(adopterDto.Name) || string.IsNullOrEmpty(adopterDto.Surname) || string.IsNullOrEmpty(adopterDto.Address) || string.IsNullOrEmpty(adopterDto.City)) throw new ArgumentException("Invalid adopter");
 
             // Verifica se esiste già (business rule → livello application)
-            var existing = _repository.GetByFcAdopter(new Domain.Model.ValueObjects.FiscalCode(adopterDto.Fc));
+            var existing = _repository.GetByFiscalCode(adopterDto.Fc);
             if (existing != null)
                 throw new InvalidOperationException("This adopter already exist.");
 
@@ -34,15 +35,23 @@ namespace Application.UseCases
             // Persistenza
             _repository.Add(adopter);
         }
+        public void UpdateAdopter(AdopterDto adopterDto)
+        {
+            _repository.Update(adopterDto.ToDomain());
+        }
         public void RemoveAdopter(AdopterDto adopterDto)
         {
             if (string.IsNullOrEmpty(adopterDto.Name) || string.IsNullOrEmpty(adopterDto.Surname) || string.IsNullOrEmpty(adopterDto.Address) || string.IsNullOrEmpty(adopterDto.City)) throw new ArgumentException("Invalid adopter");
 
-            var entity = _repository.GetByFcAdopter(new Domain.Model.ValueObjects.FiscalCode(adopterDto.Fc));
+            var entity = _repository.GetByFiscalCode(adopterDto.Fc);
             if (entity == null)
                 throw new InvalidOperationException("Adopter not found.");
 
             _repository.Remove(entity);
+        }
+        public Adopter? GetAdopterByFiscalCode(FiscalCode fiscalCode)
+        {
+            return _repository.GetByFiscalCode(fiscalCode);
         }
     }
 }

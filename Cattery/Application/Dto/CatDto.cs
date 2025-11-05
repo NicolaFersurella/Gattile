@@ -14,7 +14,7 @@ namespace Application.Dto
         DateTime ArrivalDate,
         DateTime? LeaveDate,
         DateTime? BirthDate,
-        int? ProbablyYear,
+        //int? ProbablyYear,
         string? Description,
         List<Adoption>? Adoptions = null
     );

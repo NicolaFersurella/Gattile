@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Infrastructure.Persistence.Repositories;
 
 namespace TestUseCases
 {
@@ -17,7 +18,7 @@ namespace TestUseCases
         [TestMethod]
         public void TestCreateCat_WithInvalidCatDto_ThrowsArgumentException()
         {
-            ICatRepository repo;
+            JsonCatRepository repo;
             repo = null!;
             CatService service = new CatService(repo);
 
@@ -37,7 +38,7 @@ namespace TestUseCases
         [TestMethod]
         public void TestViewAllCat_NoInvalidParameter_ReturnList()
         {
-            ICatRepository repo;
+            JsonCatRepository repo;
             repo = null!;
             CatService service = new CatService(repo);
 
@@ -65,7 +66,7 @@ namespace TestUseCases
             repo.Add(dto1.ToDomain());
             repo.Add(dto2.ToDomain());
 
-           List<CatDto> excpectedResult = new List<CatDto>() { dto1, dto2 };
+            List<CatDto> excpectedResult = new List<CatDto>() { dto1, dto2 };
 
             Assert.AreEqual(excpectedResult, service.ViewAll());
         }

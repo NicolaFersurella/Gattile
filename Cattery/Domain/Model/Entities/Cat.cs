@@ -94,21 +94,8 @@ namespace Domain.Model.Entities
             }
         }
         public string Id { get; private set; }
-        /*
-         * readonly protegge il riferimento alla lista, non il contenuto.
-         * La mutabilità dei dati all’interno della lista è ancora
-         * consentita.
-         * Se fa parte dello stato mettiamo IReadOnlyList nella proprietà
-         * Come il val in Kotlin sugli array
-         */
-        private readonly List<Adoption>? _adoptions;
-        public IReadOnlyList<Adoption>? Adoptions => _adoptions;
-        public Cat(string name, string breed, Gender gender, DateTime arrivalDate, DateTime? leaveDate, DateTime? birthDate, string? description, List<Adoption>? adoptions = null)
+        public Cat(string name, string breed, Gender gender, DateTime arrivalDate, DateTime? leaveDate, DateTime? birthDate, string? description, string id = null)
         {
-            if (birthDate == null)
-            {
-                throw new ArgumentNullException("Birth date cannot be null.");
-            }
             Name = name;
             Breed = breed;
             Gender = gender;
@@ -116,20 +103,14 @@ namespace Domain.Model.Entities
             LeaveDate = leaveDate;
             BirthDate = birthDate;
             Description = description;
-
-            Id = CreateId();
-
-            for (int i = 0; i < adoptions?.Count; i++)
+            if (id != null)
             {
-                if (adoptions[i].Cat.Equals(this) == false)
-                    throw new ArgumentException("Wrong cat.");
+                Id = id;
             }
-            //ordino prima di salvare la lista
-            _adoptions = adoptions ?? new List<Adoption>();
-        }
-        public Cat(string name, string breed, Gender gender, DateTime arrivalDate, DateTime? leaveDate, DateTime? birthDate, int probablyYear, string? description, List<Adoption> adoptions = null) : this(name, breed, gender, arrivalDate, leaveDate, birthDate, description, adoptions)
-        {
-            ProbablyYear = probablyYear;
+            else
+            {
+                Id = CreateId();
+            }
         }
         private string CreateId()
         {
@@ -162,16 +143,14 @@ namespace Domain.Model.Entities
             }
             return sb.ToString();
         }
-        public void AddAdoption(Adoption a)
+/*
+        // il compleanno può essere modificato
+        public void ModifyBirthday(DateTime birthDate)
         {
-            if (a == null) throw new ArgumentNullException(nameof(a));
-
-            if (a.Cat.Equals(this))
-                _adoptions.Add(a);
-
-            //ordino dopo aver aggiunto
-            else throw new ArgumentException("cat is wrong.");
+            if (birthDate > DateTime.Now) throw new ArgumentException("Invalid birth date.");
+            BirthDate = birthDate;
         }
+*/
         /// <summary>
         /// consideriamo uguali due gatti se hanno lo stesso ID
         /// </summary>
@@ -183,10 +162,6 @@ namespace Domain.Model.Entities
             Cat other = obj as Cat;
 
             return Id.Equals(other.Id);
-        }
-        public override int GetHashCode()
-        {
-            return Id.GetHashCode();
         }
         public override string ToString()
         {

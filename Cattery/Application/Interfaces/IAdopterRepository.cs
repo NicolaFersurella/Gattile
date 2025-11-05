@@ -11,7 +11,8 @@ namespace Application.Interfaces
     public interface IAdopterRepository
     {
         void Add(Adopter adopter);
+        void Update(Adopter adopter);
         void Remove(Adopter adopter);
-        Adopter? GetByFcAdopter(FiscalCode fc);
+        Adopter? GetByFiscalCode(FiscalCode fiscalCode);
     }
 }

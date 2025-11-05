@@ -15,7 +15,7 @@ namespace Application.Mappers
         {
             if (dto == null) throw new ArgumentNullException(nameof(dto));
 
-            //Creo l'adozione
+            // Creo l'adozione
             return new Adoption(
                 dto.Cat.ToDomain(),
                 dto.AdoptionDate,
@@ -26,6 +26,7 @@ namespace Application.Mappers
         {
             if (entity == null) throw new ArgumentNullException(nameof(entity));
 
+            // Creo l'adozione DTO
             return new AdoptionDto(
                 entity.Cat.ToDto(),
                 entity.AdoptionDate,

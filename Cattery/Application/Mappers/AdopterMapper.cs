@@ -15,15 +15,15 @@ namespace Application.Mappers
         {
             if (dto == null) throw new ArgumentNullException(nameof(dto));
 
-            //Creo l'adottante
+            // Creo l'adottante
             return new Adopter(
-                new FiscalCode(dto.Fc),
+                dto.Fc,
                 dto.Name,
                 dto.Surname,
-                new PhoneNumber(dto.Phone),
-                new Email(dto.Email),
+                dto.Phone,
+                dto.Email,
                 dto.Address,
-                new Cap(dto.Cap),
+                dto.Cap,
                 dto.City
             );
         }
@@ -31,14 +31,15 @@ namespace Application.Mappers
         {
             if (entity == null) throw new ArgumentNullException(nameof(entity));
 
+            // Creo l'adottante DTO
             return new AdopterDto(
-                entity.Fc.Value,
+                entity.Fc,
                 entity.Name,
                 entity.Surname,
-                entity.Phone.Value,
-                entity.Email.Value,
+                entity.Phone,
+                entity.Email,
                 entity.Address,
-                entity.Cap.Value,
+                entity.Cap,
                 entity.City
             );
         }

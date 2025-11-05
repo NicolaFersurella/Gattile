@@ -2,6 +2,7 @@
 using Application.Interfaces;
 using Application.Mappers;
 using Application.UseCases;
+using Infrastructure.Persistence.Repositories;
 
 namespace TestUseCases
 {
@@ -11,7 +12,7 @@ namespace TestUseCases
         [TestMethod]
         public void TestCreateAdopter_WithInvalidAdopterDto_ThrowsArgumentException()
         {
-            IAdopterRepository repo;
+            JsonAdopterRepository repo;
             repo = null!;
             AdopterService service = new AdopterService(repo);
 
@@ -31,7 +32,7 @@ namespace TestUseCases
         [TestMethod]
         public void TestRemoveAdopter_WithInvalidAdopterDto_ThrowsArgumentException()
         {
-            IAdopterRepository repo;
+            JsonAdopterRepository repo;
             repo = null!;
             AdopterService service = new AdopterService(repo);
 

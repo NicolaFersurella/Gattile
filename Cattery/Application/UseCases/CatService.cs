@@ -23,10 +23,9 @@ namespace Application.UseCases
         {
             if (string.IsNullOrEmpty(catDto.Name) || string.IsNullOrEmpty(catDto.Breed)) throw new ArgumentException("Invalid cat");
             if (catDto.LeaveDate != null && catDto.ArrivalDate > catDto.LeaveDate) throw new ArgumentException("Invalid arrival date");
-            if (catDto.LeaveDate == null && catDto.ProbablyYear < 1) throw new ArgumentException("Invalid probably year");
 
             // Verifica se esiste già (business rule → livello application)
-            var existing = _repository.GetByNameCat(catDto.Name);
+            var existing = _repository.GetByCatId(catDto.ToDomain().Id);
             if (existing != null)
                 throw new InvalidOperationException($"This cat already exist.");
 

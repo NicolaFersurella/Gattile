@@ -11,8 +11,10 @@ namespace Application.Interfaces
     public interface IAdoptionRepository
     {
         void Add(Adoption adoption);
+        void Update(Adoption adoption);
         void Remove(Adoption adoption);
-        void ManageFailure(Adoption adoption);
-        Adoption? GetByFiscalCode(FiscalCode fiscalCode);
+        Adoption? GetById(string id);
+        IEnumerable<Adoption> GetByFiscalCode(FiscalCode fiscalCode);
+        
     }
 }
