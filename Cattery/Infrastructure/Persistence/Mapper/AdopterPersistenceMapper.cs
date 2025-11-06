@@ -32,6 +32,7 @@ namespace Infrastructure.Persistence.Mapper
         {
             if (entity == null) throw new ArgumentNullException(nameof(entity));
 
+            //Creo l'adottante DTO
             return new AdopterPersistenceDto(
                 entity.Fc.Value,
                 entity.Name,

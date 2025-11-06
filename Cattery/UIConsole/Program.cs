@@ -3,12 +3,14 @@ using Application.UseCases;
 using Application.Dto;
 using Domain.Model.Entities;
 
+
 namespace UIConsole
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+/*
             Console.WriteLine("Hello, World!");
             JsonCatRepository catRepo = new JsonCatRepository();
             JsonAdoptionRepository adoptionRepo = new JsonAdoptionRepository();
@@ -42,6 +44,7 @@ namespace UIConsole
             {
                 Console.WriteLine($"Error creating adoption: {ex.Message}");
             }
+*/
         }
     }
 }

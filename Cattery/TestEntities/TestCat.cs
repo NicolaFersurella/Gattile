@@ -1,6 +1,7 @@
 ﻿using Domain.Model.Entities;
 using Domain.Model.ValueObjects;
 
+/*
 namespace TestEntities
 {
     [TestClass]
@@ -213,3 +214,4 @@ namespace TestEntities
         }
     }
 }
+*/

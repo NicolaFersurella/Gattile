@@ -17,13 +17,13 @@ namespace Application.Mappers
 
             // Creo l'adottante
             return new Adopter(
-                dto.Fc,
+                new FiscalCode(dto.Fc),
                 dto.Name,
                 dto.Surname,
-                dto.Phone,
-                dto.Email,
+                new PhoneNumber(dto.Phone),
+                new Email(dto.Email),
                 dto.Address,
-                dto.Cap,
+                new Cap(dto.Cap),
                 dto.City
             );
         }
@@ -33,13 +33,13 @@ namespace Application.Mappers
 
             // Creo l'adottante DTO
             return new AdopterDto(
-                entity.Fc,
+                entity.Fc.Value,
                 entity.Name,
                 entity.Surname,
-                entity.Phone,
-                entity.Email,
+                entity.Phone.Value,
+                entity.Email.Value,
                 entity.Address,
-                entity.Cap,
+                entity.Cap.Value,
                 entity.City
             );
         }

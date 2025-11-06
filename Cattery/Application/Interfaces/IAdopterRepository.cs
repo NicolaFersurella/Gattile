@@ -13,6 +13,6 @@ namespace Application.Interfaces
         void Add(Adopter adopter);
         void Update(Adopter adopter);
         void Remove(Adopter adopter);
-        Adopter? GetByFiscalCode(FiscalCode fiscalCode);
+        Adopter? GetByFiscalCode(string fiscalCode);
     }
 }

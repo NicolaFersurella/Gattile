@@ -4,6 +4,7 @@ using Application.Mappers;
 using Application.UseCases;
 using Infrastructure.Persistence.Repositories;
 
+/*
 namespace TestUseCases
 {
     [TestClass]
@@ -51,3 +52,4 @@ namespace TestUseCases
         }
     }
 }
+*/

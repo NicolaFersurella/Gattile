@@ -1,13 +1,14 @@
 ﻿using Application.Interfaces;
 using Domain.Model.Entities;
+using Domain.Model.ValueObjects;
+using Infrastructure.Persistence.Dto;
+using Infrastructure.Persistence.Mapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-using Infrastructure.Persistence.Dto;
-using Infrastructure.Persistence.Mapper;
 
 namespace Infrastructure.Persistence.Repositories
 {
@@ -63,19 +64,61 @@ namespace Infrastructure.Persistence.Repositories
             //rendo persistente l'aggiunta nel file
             SaveToFile();
         }
-        public List<Cat> GetAll()
+        public void Update(Cat cat)
         {
             EnsureLoaded();
 
-            return _cache.Values.ToList();
+            // Controllo esistenza - Repository non fa logica di business si limita a sollevare una exception
+            if (!_cache.ContainsKey(cat.Id))
+                throw new InvalidOperationException($"Cat '{cat.Id}' not found.");
+
+            //aggiorno il gatto nella cache
+            _cache[cat.Id] = cat;
+
+            //rendo persistente l'aggiornamento nel file
+            SaveToFile();
         }
-        public Cat? GetByNameCat(string name)
+        public void Remove(Cat cat)
+        {
+            EnsureLoaded();
+
+            // Controllo esistenza - Repository non fa logica di business si limita a sollevare una exception
+            if (!_cache.ContainsKey(cat.Id))
+                throw new InvalidOperationException($"Cat '{cat.Id}' not found.");
+
+            //rimuovo il gatto dalla cache
+            _cache.Remove(cat.Id);
+
+            //rendo persistente la rimozione nel file
+            SaveToFile();
+        }
+        public void Remove(string id)
+        {
+            EnsureLoaded();
+
+            // Controllo esistenza - Repository non fa logica di business si limita a sollevare una exception
+            if (!_cache.ContainsKey(id))
+                throw new InvalidOperationException($"Cat '{id}' not found.");
+
+            //rimuovo il gatto dalla cache
+            _cache.Remove(id);
+
+            //rendo persistente la rimozione nel file
+            SaveToFile();
+        }
+        public Cat? GetByCatId(string id)
         {
             EnsureLoaded();
 
             Cat? cat;
-            _cache.TryGetValue(name, out cat);
+            _cache.TryGetValue(id, out cat);
             return cat;
+        }
+        public IEnumerable<Cat> GetAll()
+        {
+            EnsureLoaded();
+
+            return _cache.Values;
         }
         private void SaveToFile()
         {

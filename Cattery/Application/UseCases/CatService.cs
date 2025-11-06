@@ -35,15 +35,39 @@ namespace Application.UseCases
             // Persistenza
             _repository.Add(cat);
         }
-        public List<CatDto> ViewAll()
+        public void UpdateCat(CatDto catDto)
         {
-            List<CatDto> dtos = new List<CatDto>();
+            if (string.IsNullOrEmpty(catDto.Name) || string.IsNullOrEmpty(catDto.Breed)) throw new ArgumentException("Invalid cat");
+            if (catDto.LeaveDate != null && catDto.ArrivalDate > catDto.LeaveDate) throw new ArgumentException("Invalid arrival date");
 
-            foreach (Cat c in _repository.GetAll())
-            {
-                dtos.Add(c.ToDto());
-            }
-            return dtos;
+            _repository.Update(catDto.ToDomain());
+        }
+        public void RemoveCatByCatDto(CatDto catDto)
+        {
+            if (string.IsNullOrEmpty(catDto.Name) || string.IsNullOrEmpty(catDto.Breed)) throw new ArgumentException("Invalid cat");
+            if (catDto.LeaveDate != null && catDto.ArrivalDate > catDto.LeaveDate) throw new ArgumentException("Invalid arrival date");
+
+            var exsisting = _repository.GetByCatId(catDto.ToDomain().Id);
+            if (exsisting == null)
+                throw new InvalidOperationException("Cat not found.");
+
+           _repository.Remove(exsisting);
+        }
+        public void RemoveCatById(string id)
+        {
+            var existing = _repository.GetByCatId(id);
+            if (existing == null)
+                throw new InvalidOperationException("Cat not found.");
+
+            _repository.Remove(id);
+        }
+        public Cat? GetCatById(string id)
+        {
+            return _repository.GetByCatId(id);
+        }
+        public IEnumerable<Cat> GetAllCats()
+        {
+            return _repository.GetAll();
         }
     }
 }

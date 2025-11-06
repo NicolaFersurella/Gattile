@@ -17,7 +17,7 @@ namespace Infrastructure.Persistence.Repositories
         private readonly string _filePath = "adoptions.json";
         // la key è il FiscalCode dell'adottante
         // il value è l'adozioni
-        private readonly Dictionary<FiscalCode, Adoption> _cache = new Dictionary<FiscalCode, Adoption>();
+        private readonly Dictionary<string, Adoption> _cache = new Dictionary<string, Adoption>();
         private bool _initialized = false;
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace Infrastructure.Persistence.Repositories
                 //lo strasformo in oggetto Adoption
                 Adoption adoption = dto.ToDomain(); // Mapper Persistence DTO -> Domain
                 //lo aggiungo alla cache
-                _cache[adoption.Adopter.Fc] = adoption;
+                _cache[adoption.Adopter.Fc.Value] = adoption;
             }
 
             _initialized = true;
@@ -54,7 +54,22 @@ namespace Infrastructure.Persistence.Repositories
         {
             EnsureLoaded();
 
-            _cache[adoption.Adopter.Fc] = adoption;
+            _cache[adoption.Adopter.Fc.Value] = adoption;
+
+            SaveToFile();
+        }
+        public void Update(Adoption adoption)
+        {
+            EnsureLoaded();
+
+            // Controllo esistenza - Repository non fa logica di business si limita a sollevare una exception
+            if (!_cache.ContainsKey(adoption.Adopter.Fc.Value))
+                throw new InvalidOperationException($"Adopter with fiscal code '{adoption.Adopter.Fc}' not found.");
+
+            //aggiorno l'adopter nella cache
+            _cache[adoption.Adopter.Fc.Value] = adoption;
+
+            //rendo persistente l'aggiornamento nel file
             SaveToFile();
         }
         public void Remove(Adoption adoption)
@@ -62,30 +77,29 @@ namespace Infrastructure.Persistence.Repositories
             EnsureLoaded();
 
             // Controllo esistenza - Repository non fa logica di business si limita a sollevare una exception
-            if (!_cache.ContainsKey(adoption.Adopter.Fc))
+            if (!_cache.ContainsKey(adoption.Adopter.Fc.Value))
                 throw new InvalidOperationException($"Adopter with fiscal code '{adoption.Adopter.Fc}' not found.");
 
             //rimuovo l'adopter dalla cache
-            _cache.Remove(adoption.Adopter.Fc);
+            _cache.Remove(adoption.Adopter.Fc.Value);
             //rendo persistente la rimozione nel file
             SaveToFile();
         }
-        public void ManageFailure(Adoption adoption)
+        public Adoption? GetById(string id)
         {
             EnsureLoaded();
 
-            string message = $"(Adozione fallita: {adoption.AdoptionDate})";
-            adoption.Cat.LeaveDate = null;
-            adoption.Cat.Description = message;
-
-
+            return _cache.Values.FirstOrDefault(a => a.Cat.Id == id);
         }
-        public Adoption? GetByFiscalCode(FiscalCode fc)
+        public IEnumerable<Adoption> GetByFiscalCode(string fc)
         {
             EnsureLoaded();
 
-            _cache.TryGetValue(fc, out var adoption);
-            return adoption;
+            if (_cache.ContainsKey(fc))
+            {
+                return _cache.Values;
+            }
+            throw new InvalidOperationException($"No adoptions found for adopter with fiscal code '{fc}'.");
         }
         private void SaveToFile()
         {

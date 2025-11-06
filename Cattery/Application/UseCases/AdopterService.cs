@@ -49,7 +49,7 @@ namespace Application.UseCases
 
             _repository.Remove(entity);
         }
-        public Adopter? GetAdopterByFiscalCode(FiscalCode fiscalCode)
+        public Adopter? GetAdopterByFiscalCode(string fiscalCode)
         {
             return _repository.GetByFiscalCode(fiscalCode);
         }

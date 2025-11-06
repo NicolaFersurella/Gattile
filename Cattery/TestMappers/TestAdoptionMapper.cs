@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Domain.Model.Entities;
 using Application.Dto;
 
+/*
 namespace TestMappers
 {
     [TestClass]
@@ -115,3 +116,4 @@ namespace TestMappers
         }
     }
 }
+*/

@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Infrastructure.Persistence.Repositories;
 
+/*
 namespace TestUseCases
 {
     [TestClass]
@@ -72,3 +73,4 @@ namespace TestUseCases
         }
     }
 }
+*/

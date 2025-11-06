@@ -25,7 +25,7 @@ namespace Application.UseCases
             // controllo se il gatto e l'adottante non sono nulli e la data di adozione è valida
             if (adoptionDto.Cat == null || adoptionDto.Adopter == null || adoptionDto.AdoptionDate == default) throw new ArgumentException("Invalid adoption");
 
-            var existingAdoption = _repository.GetByFiscalCode(adoptionDto.Adopter.ToDomain().Fc);
+            var existingAdoption = _repository.GetById(adoptionDto.Cat.ToDomain().Id); // controllo se esiste l'adozione passandogli l'id del gatto
             if (existingAdoption != null) throw new ArgumentException("Cat already adopted");
 
             _repository.Add(adoptionDto.ToDomain());
@@ -41,7 +41,7 @@ namespace Application.UseCases
         {
             if (adoptionDto.Cat == null || adoptionDto.Adopter == null || adoptionDto.AdoptionDate == default) throw new ArgumentException("Invalid adoption");
 
-            var adoption = _repository.GetByFiscalCode(adoptionDto.Adopter.ToDomain().Fc);
+            var adoption = _repository.GetById(adoptionDto.Cat.ToDomain().Id); // controllo se esiste l'adozione passandogli l'id del gatto
             if (adoption == null) throw new ArgumentException("Adoption not found");
 
             _repository.Remove(adoptionDto.ToDomain());
@@ -50,7 +50,7 @@ namespace Application.UseCases
         {
             return _repository.GetById(id);
         }
-        public IEnumerable<Adoption> GetAdoptionByFiscalCodeAdopter(FiscalCode fiscalCode)
+        public IEnumerable<Adoption> GetAdoptionByFiscalCodeAdopter(string fiscalCode)
         {
             return _repository.GetByFiscalCode(fiscalCode);
         }

@@ -18,7 +18,7 @@ namespace Infrastructure.Persistence.Repositories
         //La chiave del dizionario è il FiscalCode del adopter. Il valore è l’entità di dominio Adopter.
         //Le operazioni di un adopter vengono svolte in O(1).
         //StringComparer.OrdinalIgnoreCase Serve a rendere la chiave case-insensitive.
-        private readonly Dictionary<FiscalCode, Adopter> _cache = new Dictionary<FiscalCode, Adopter>();
+        private readonly Dictionary<string, Adopter> _cache = new Dictionary<string, Adopter>();
         private bool _initialized = false;
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace Infrastructure.Persistence.Repositories
                 //lo strasformo in oggetto adopter
                 Adopter adopter = dto.ToDomain(); // Mapper Persistence DTO -> Domain
                 //lo aggiungo alla cache
-                _cache[adopter.Fc] = adopter;
+                _cache[adopter.Fc.Value] = adopter;
             }
 
             _initialized = true;
@@ -56,15 +56,28 @@ namespace Infrastructure.Persistence.Repositories
             EnsureLoaded();
 
             // Controllo duplicati case-insensitive - Repository non fa logica di business si limita a sollevare una exception
-            if (_cache.ContainsKey(adopter.Fc))
+            if (_cache.ContainsKey(adopter.Fc.Value))
                 throw new InvalidOperationException($"Adopter '{adopter.Fc}' already exist.");
 
             //aggiungo l'adopter alla cache
-            _cache[adopter.Fc] = adopter;
+            _cache[adopter.Fc.Value] = adopter;
             //rendo persistente l'aggiunta nel file
             SaveToFile();
         }
-        public Adopter? GetByFiscalCode(FiscalCode fc)
+        public void Update(Adopter adopter)
+        {
+            EnsureLoaded();
+
+            // Controllo esistenza - Repository non fa logica di business si limita a sollevare una exception
+            if (!_cache.ContainsKey(adopter.Fc.Value))
+                throw new InvalidOperationException($"Adopter '{adopter.Fc}' not found.");
+
+            //aggiorno l'adopter nella cache
+            _cache[adopter.Fc.Value] = adopter;
+            //rendo persistente l'aggiornamento nel file
+            SaveToFile();
+        }
+        public Adopter? GetByFiscalCode(string fc)
         {
             EnsureLoaded();
 
@@ -78,11 +91,11 @@ namespace Infrastructure.Persistence.Repositories
             EnsureLoaded();
 
             // Controllo esistenza - Repository non fa logica di business si limita a sollevare una exception
-            if (!_cache.ContainsKey(adopter.Fc))
+            if (!_cache.ContainsKey(adopter.Fc.Value))
                 throw new InvalidOperationException($"Adopter '{adopter.Fc}' not found.");
 
             //rimuovo l'adopter dalla cache
-            _cache.Remove(adopter.Fc);
+            _cache.Remove(adopter.Fc.Value);
             //rendo persistente la rimozione nel file
             SaveToFile();
         }

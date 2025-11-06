@@ -15,7 +15,7 @@ namespace Application.Dto
         DateTime? LeaveDate,
         DateTime? BirthDate,
         //int? ProbablyYear,
-        string? Description,
-        List<Adoption>? Adoptions = null
+        string? Description
+        //List<Adoption>? Adoptions = null
     );
 }

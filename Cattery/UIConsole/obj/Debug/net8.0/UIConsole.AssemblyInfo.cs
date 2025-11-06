@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UIConsole")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3d72a3096ca3db5d23f59f4980c027eac0372ef4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4383ce39808b345a0c78dcbfe3fcd97d77526cca")]
 [assembly: System.Reflection.AssemblyProductAttribute("UIConsole")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UIConsole")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

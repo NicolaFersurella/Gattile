@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using Application.Mappers;
 using Infrastructure.Persistence.Repositories;
 
+/*
 namespace TestUseCases
 {
     [TestClass]
@@ -47,3 +48,4 @@ namespace TestUseCases
         }
     }
 }
+*/

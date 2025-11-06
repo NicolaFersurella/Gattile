@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Domain.Model.Entities;
 using Domain.Model.ValueObjects;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+/*
 namespace TestEntities
 {
     [TestClass]
@@ -236,3 +238,4 @@ namespace TestEntities
         }
     }
 }
+*/

@@ -14,7 +14,6 @@ namespace Application.Interfaces
         void Update(Adoption adoption);
         void Remove(Adoption adoption);
         Adoption? GetById(string id);
-        IEnumerable<Adoption> GetByFiscalCode(FiscalCode fiscalCode);
-        
+        IEnumerable<Adoption> GetByFiscalCode(string fiscalCode);
     }
 }

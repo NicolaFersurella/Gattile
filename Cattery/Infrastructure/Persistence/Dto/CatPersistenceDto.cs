@@ -14,8 +14,8 @@ namespace Infrastructure.Persistence.Dto
         DateTime ArrivalDate,
         DateTime? LeaveDate,
         DateTime? BirthDate,
-        int? ProbablyYear,
-        string? Description,
-        List<Adoption>? Adoptions = null
+        //int? ProbablyYear,
+        string? Description
+        //List<Adoption>? Adoptions = null
     );
 }

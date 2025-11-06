@@ -22,8 +22,7 @@ namespace Infrastructure.Persistence.Mapper
                 dto.ArrivalDate,
                 dto.LeaveDate,
                 dto.BirthDate,
-                dto.Description,
-                dto.Adoptions
+                dto.Description
             );
 
             return cat;
@@ -40,9 +39,7 @@ namespace Infrastructure.Persistence.Mapper
                 entity.ArrivalDate,
                 entity.LeaveDate,
                 entity.BirthDate,
-                entity.ProbablyYear,
-                entity.Description,
-                entity.Adoptions?.ToList() //se non è null converte da una readonly a una lista adoption
+                entity.Description
             );
         }
     }
