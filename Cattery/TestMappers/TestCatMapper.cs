@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-/*
+
 namespace TestMappers
 {
     [TestClass]
@@ -30,7 +30,6 @@ namespace TestMappers
                 ArrivalDate: new DateTime(2020, 6, 1),
                 LeaveDate: null,
                 BirthDate: new DateTime(2020, 1, 1),
-                ProbablyYear: 1,
                 Description: "A friendly cat"
             );
 
@@ -44,7 +43,13 @@ namespace TestMappers
                 dto.Description
             );
 
-            Assert.AreEqual(cat, dto.ToDomain());
+            Assert.AreEqual(cat.Name, dto.ToDomain().Name);
+            Assert.AreEqual(cat.Breed, dto.ToDomain().Breed);
+            Assert.AreEqual(cat.Gender, dto.ToDomain().Gender);
+            Assert.AreEqual(cat.ArrivalDate, dto.ToDomain().ArrivalDate);
+            Assert.AreEqual(cat.LeaveDate, dto.ToDomain().LeaveDate);
+            Assert.AreEqual(cat.BirthDate, dto.ToDomain().BirthDate);
+            Assert.AreEqual(cat.Description, dto.ToDomain().Description);
         }
         [TestMethod]
         public void TestToDto_WithEntityNull_ThrowsArgumentNullException()
@@ -62,10 +67,8 @@ namespace TestMappers
                 gender: Gender.MALE,
                 arrivalDate: new DateTime(2020, 6, 1),
                 leaveDate: null,
-                probablyYear: 1,
                 birthDate: new DateTime(2020, 1, 1),
-                description: "A friendly cat",
-                adoptions: null
+                description: "A friendly cat"
             );
 
             CatDto dto = new CatDto(
@@ -74,14 +77,17 @@ namespace TestMappers
                 Gender: cat.Gender,
                 ArrivalDate: cat.ArrivalDate,
                 LeaveDate: cat.LeaveDate,
-                ProbablyYear: cat.ProbablyYear,
                 BirthDate: cat.BirthDate,
-                Description: cat.Description,
-                Adoptions: cat.Adoptions?.ToList()
+                Description: cat.Description
             );
 
-            Assert.AreEqual(dto, cat.ToDto());
+            Assert.AreEqual(dto.Name, cat.ToDto().Name);
+            Assert.AreEqual(dto.Breed, cat.ToDto().Breed);
+            Assert.AreEqual(dto.Gender, cat.ToDto().Gender);
+            Assert.AreEqual(dto.ArrivalDate, cat.ToDto().ArrivalDate);
+            Assert.AreEqual(dto.LeaveDate, cat.ToDto().LeaveDate);
+            Assert.AreEqual(dto.BirthDate, cat.ToDto().BirthDate);
+            Assert.AreEqual(dto.Description, cat.ToDto().Description);
         }
     }
 }
-*/

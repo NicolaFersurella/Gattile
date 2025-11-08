@@ -37,6 +37,8 @@ namespace Application.UseCases
         }
         public void UpdateAdopter(AdopterDto adopterDto)
         {
+            if (string.IsNullOrEmpty(adopterDto.Name) || string.IsNullOrEmpty(adopterDto.Surname) || string.IsNullOrEmpty(adopterDto.Address) || string.IsNullOrEmpty(adopterDto.City)) throw new ArgumentException("Invalid adopter");
+
             _repository.Update(adopterDto.ToDomain());
         }
         public void RemoveAdopter(AdopterDto adopterDto)
@@ -51,6 +53,8 @@ namespace Application.UseCases
         }
         public Adopter? GetAdopterByFiscalCode(string fiscalCode)
         {
+            if (string.IsNullOrEmpty(fiscalCode)) throw new ArgumentException("Invalid fiscal code.");
+
             return _repository.GetByFiscalCode(fiscalCode);
         }
     }

@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Infrastructure.Persistence.Repositories;
 
-/*
+
 namespace TestUseCases
 {
     [TestClass]
@@ -30,47 +30,92 @@ namespace TestUseCases
                 ArrivalDate: new DateTime(2020, 6, 1),
                 LeaveDate: null,
                 BirthDate: new DateTime(2020, 1, 1),
-                ProbablyYear: 0,
                 Description: "A friendly cat"
             );
 
             Assert.ThrowsException<ArgumentException>(() => service.CreateCat(dto));
         }
         [TestMethod]
-        public void TestViewAllCat_NoInvalidParameter_ReturnList()
+        public void TestUpdateCat_WithInvalidCatDto_ThrowsArgumentException()
         {
             JsonCatRepository repo;
             repo = null!;
             CatService service = new CatService(repo);
 
-            CatDto dto1 = new CatDto(
-                Name: "Pippo",
-                Breed: "Siamese",
+            CatDto dto = new CatDto(
+                Name: "",
+                Breed: "",
                 Gender: Gender.MALE,
                 ArrivalDate: new DateTime(2020, 6, 1),
-                LeaveDate: new DateTime(2020, 8, 1),
+                LeaveDate: null,
                 BirthDate: new DateTime(2020, 1, 1),
-                ProbablyYear: null,
-                Description: "A friendly cat"
-            );
-            CatDto dto2 = new CatDto(
-                Name: "Pluto",
-                Breed: "Siamese",
-                Gender: Gender.MALE,
-                ArrivalDate: new DateTime(2020, 6, 1),
-                LeaveDate: new DateTime(2020, 8, 2),
-                BirthDate: new DateTime(2020, 1, 1),
-                ProbablyYear: null,
                 Description: "A friendly cat"
             );
 
-            repo.Add(dto1.ToDomain());
-            repo.Add(dto2.ToDomain());
+            Assert.ThrowsException<ArgumentException>(() => service.UpdateCat(dto));
+        }
+        [TestMethod]
+        public void TestRemoveCatByCatDto_WithInvalidCatDto_ThrowsArgumentException()
+        {
+            JsonCatRepository repo;
+            repo = null!;
+            CatService service = new CatService(repo);
 
-            List<CatDto> excpectedResult = new List<CatDto>() { dto1, dto2 };
+            CatDto dto = new CatDto(
+                Name: "",
+                Breed: "",
+                Gender: Gender.MALE,
+                ArrivalDate: new DateTime(2020, 6, 1),
+                LeaveDate: null,
+                BirthDate: new DateTime(2020, 1, 1),
+                Description: "A friendly cat"
+            );
 
-            Assert.AreEqual(excpectedResult, service.ViewAll());
+            Assert.ThrowsException<ArgumentException>(() => service.RemoveCatByCatDto(dto));
+        }
+        [TestMethod]
+        public void TestRemoveCatById_WithInvalidIdEmpty_ThrowsArgumentException()
+        {
+            JsonCatRepository repo;
+            repo = null!;
+            CatService service = new CatService(repo);
+
+            string id = "";
+
+            Assert.ThrowsException<ArgumentException>(() => service.RemoveCatById(id));
+        }
+        [TestMethod]
+        public void TestRemoveCatById_WithInvalidIdNull_ThrowsArgumentException()
+        {
+            JsonCatRepository repo;
+            repo = null!;
+            CatService service = new CatService(repo);
+
+            string id = null;
+
+            Assert.ThrowsException<ArgumentException>(() => service.RemoveCatById(id));
+        }
+        [TestMethod]
+        public void TestGetCatById_WithInvalidIdEmpty_ThrowsArgumentException()
+        {
+            JsonCatRepository repo;
+            repo = null!;
+            CatService service = new CatService(repo);
+
+            string id = "";
+
+            Assert.ThrowsException<ArgumentException>(() => service.GetCatById(id));
+        }
+        [TestMethod]
+        public void TestGetCatById_WithInvalidIdNull_ThrowsArgumentException()
+        {
+            JsonCatRepository repo;
+            repo = null!;
+            CatService service = new CatService(repo);
+
+            string id = null;
+
+            Assert.ThrowsException<ArgumentException>(() => service.GetCatById(id));
         }
     }
 }
-*/

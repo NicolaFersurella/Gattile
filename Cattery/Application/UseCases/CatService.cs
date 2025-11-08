@@ -55,6 +55,8 @@ namespace Application.UseCases
         }
         public void RemoveCatById(string id)
         {
+            if (string.IsNullOrEmpty(id)) throw new ArgumentException("Invalid id.");
+
             var existing = _repository.GetByCatId(id);
             if (existing == null)
                 throw new InvalidOperationException("Cat not found.");
@@ -63,6 +65,8 @@ namespace Application.UseCases
         }
         public Cat? GetCatById(string id)
         {
+            if (string.IsNullOrEmpty(id)) throw new ArgumentException("Invalid id.");
+
             return _repository.GetByCatId(id);
         }
         public IEnumerable<Cat> GetAllCats()

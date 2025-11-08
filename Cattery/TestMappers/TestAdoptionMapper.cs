@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Domain.Model.Entities;
 using Application.Dto;
 
-/*
+
 namespace TestMappers
 {
     [TestClass]
@@ -57,7 +57,22 @@ namespace TestMappers
                 adopterDto.ToDomain()
             );
 
-            Assert.AreEqual(expectedAdoption, dto.ToDomain());
+            Assert.AreEqual(expectedAdoption.Cat.Name, dto.ToDomain().Cat.Name);
+            Assert.AreEqual(expectedAdoption.Cat.Breed, dto.ToDomain().Cat.Breed);
+            Assert.AreEqual(expectedAdoption.Cat.Gender, dto.ToDomain().Cat.Gender);
+            Assert.AreEqual(expectedAdoption.Cat.ArrivalDate, dto.ToDomain().Cat.ArrivalDate);
+            Assert.AreEqual(expectedAdoption.Cat.LeaveDate, dto.ToDomain().Cat.LeaveDate);
+            Assert.AreEqual(expectedAdoption.Cat.BirthDate, dto.ToDomain().Cat.BirthDate);
+            Assert.AreEqual(expectedAdoption.Cat.Description, dto.ToDomain().Cat.Description);
+            Assert.AreEqual(expectedAdoption.AdoptionDate, dto.ToDomain().AdoptionDate);
+            Assert.AreEqual(expectedAdoption.Adopter.Fc, dto.ToDomain().Adopter.Fc);
+            Assert.AreEqual(expectedAdoption.Adopter.Name, dto.ToDomain().Adopter.Name);
+            Assert.AreEqual(expectedAdoption.Adopter.Surname, dto.ToDomain().Adopter.Surname);
+            Assert.AreEqual(expectedAdoption.Adopter.Phone, dto.ToDomain().Adopter.Phone);
+            Assert.AreEqual(expectedAdoption.Adopter.Email, dto.ToDomain().Adopter.Email);
+            Assert.AreEqual(expectedAdoption.Adopter.Address, dto.ToDomain().Adopter.Address);
+            Assert.AreEqual(expectedAdoption.Adopter.Cap, dto.ToDomain().Adopter.Cap);
+            Assert.AreEqual(expectedAdoption.Adopter.City, dto.ToDomain().Adopter.City);
         }
         [TestMethod]
         public void TestToDto_WithEntityNull_ThrowsArgumentNullException()
@@ -112,8 +127,22 @@ namespace TestMappers
                 Adopter: adopterDto
             );
 
-            Assert.AreEqual(expectedDto, adoption.ToDto());
+            Assert.AreEqual(expectedDto.Cat.Name, adoption.ToDto().Cat.Name);
+            Assert.AreEqual(expectedDto.Cat.Breed, adoption.ToDto().Cat.Breed);
+            Assert.AreEqual(expectedDto.Cat.Gender, adoption.ToDto().Cat.Gender);
+            Assert.AreEqual(expectedDto.Cat.ArrivalDate, adoption.ToDto().Cat.ArrivalDate);
+            Assert.AreEqual(expectedDto.Cat.LeaveDate, adoption.ToDto().Cat.LeaveDate);
+            Assert.AreEqual(expectedDto.Cat.BirthDate, adoption.ToDto().Cat.BirthDate);
+            Assert.AreEqual(expectedDto.Cat.Description, adoption.ToDto().Cat.Description);
+            Assert.AreEqual(expectedDto.AdoptionDate, adoption.ToDto().AdoptionDate);
+            Assert.AreEqual(expectedDto.Adopter.Fc, adoption.ToDto().Adopter.Fc);
+            Assert.AreEqual(expectedDto.Adopter.Name, adoption.ToDto().Adopter.Name);
+            Assert.AreEqual(expectedDto.Adopter.Surname, adoption.ToDto().Adopter.Surname);
+            Assert.AreEqual(expectedDto.Adopter.Phone, adoption.ToDto().Adopter.Phone);
+            Assert.AreEqual(expectedDto.Adopter.Email, adoption.ToDto().Adopter.Email);
+            Assert.AreEqual(expectedDto.Adopter.Address, adoption.ToDto().Adopter.Address);
+            Assert.AreEqual(expectedDto.Adopter.Cap, adoption.ToDto().Adopter.Cap);
+            Assert.AreEqual(expectedDto.Adopter.City, adoption.ToDto().Adopter.City);
         }
     }
 }
-*/

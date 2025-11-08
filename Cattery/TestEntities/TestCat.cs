@@ -1,7 +1,7 @@
 ﻿using Domain.Model.Entities;
 using Domain.Model.ValueObjects;
 
-/*
+
 namespace TestEntities
 {
     [TestClass]
@@ -123,24 +123,6 @@ namespace TestEntities
             Assert.AreEqual(birthDate, c.BirthDate);
         }
         [TestMethod]
-        public void TestConstructor_BirthDateIsNull_ReturnArgumentNullException()
-        {
-            DateTime arrivalDate = new DateTime(2023, 1, 1);
-            DateTime leaveDate = new DateTime(2023, 6, 1);
-            DateTime birthDate = new DateTime(2022, 1, 1);
-
-            Assert.ThrowsException<ArgumentNullException>(() => { Cat c = new Cat("luna", "razza", Gender.FEMALE, arrivalDate, leaveDate, null, null, null); } );
-        }
-        [TestMethod]
-        public void TestConstructor_ProbablyYearLowerYhan1_CorrectConstruction()
-        {
-            DateTime arrivalDate = new DateTime(2023, 1, 1);
-            DateTime leaveDate = new DateTime(2023, 6, 1);
-            DateTime birthDate = new DateTime(2022, 1, 1);
-
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => { Cat c = new Cat("luna", "razza", Gender.FEMALE, arrivalDate, leaveDate, birthDate, 0, null, null); });
-        }
-        [TestMethod]
         public void TestConstructor_WithValidDescription_CorrectConstruction()
         {
             DateTime arrivalDate = new DateTime(2023, 1, 1);
@@ -178,40 +160,5 @@ namespace TestEntities
 
             Assert.AreEqual(false, c.Equals(obj));
         }
-        [TestMethod]
-        public void TestAddAdoption_AdoptionIsNull_ReturnArgumentNullException()
-        {
-            DateTime arrivalDate = new DateTime(2023, 1, 1);
-            DateTime leaveDate = new DateTime(2023, 6, 1);
-            DateTime birthDate = new DateTime(2022, 1, 1);
-            string description = "This is a lovely cat.";
-            Cat c = new Cat("luna", "razza", Gender.FEMALE, arrivalDate, leaveDate, birthDate, description, null);
-            Adoption a = null;
-
-            Assert.ThrowsException<ArgumentNullException>(() => { c.AddAdoption(a); });
-        }
-        [TestMethod]
-        public void TestAddAdoption_CatIsEqual_ReturnArgumentException()
-        {
-            DateTime arrivalDate = new DateTime(2023, 1, 1);
-            DateTime leaveDate = new DateTime(2023, 6, 1);
-            DateTime birthDate = new DateTime(2022, 1, 1);
-            string description = "This is a lovely cat.";
-            Cat c = new Cat("luna", "razza", Gender.FEMALE, arrivalDate, leaveDate, birthDate, description, null);
-            DateTime arrivalDate2 = new DateTime(2023, 1, 1);
-            DateTime leaveDate2 = new DateTime(2023, 6, 1);
-            DateTime birthDate2 = new DateTime(2022, 1, 1);
-            string description2 = "This is a lovely cat.";
-            Cat c2 = new Cat("lexa", "razza", Gender.FEMALE, arrivalDate2, leaveDate2, birthDate2, description2, null);
-            FiscalCode fc = new FiscalCode("QWERTYUIOPLKJHGF");
-            PhoneNumber pn = new PhoneNumber("3534066278");
-            Email email = new Email("utente@gmail.com");
-            Cap cap = new Cap("00100");
-            Adopter a = new Adopter(fc, "nome", "cognome", pn, email, "via v", cap, "Rome");
-            Adoption ad = new Adoption(c2, arrivalDate, a);
-
-            Assert.ThrowsException<ArgumentException>(() => { c.AddAdoption(ad); });
-        }
     }
 }
-*/

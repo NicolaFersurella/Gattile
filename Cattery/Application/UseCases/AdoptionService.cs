@@ -48,10 +48,14 @@ namespace Application.UseCases
         }
         public Adoption? GetAdoptionByIdCat(string id)
         {
+            if (string.IsNullOrEmpty(id)) throw new ArgumentException("Invalid id.");
+
             return _repository.GetById(id);
         }
         public IEnumerable<Adoption> GetAdoptionByFiscalCodeAdopter(string fiscalCode)
         {
+            if (string.IsNullOrEmpty(fiscalCode)) throw new ArgumentException("Invalid fiscal code.");
+
             return _repository.GetByFiscalCode(fiscalCode);
         }
     }

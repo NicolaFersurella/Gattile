@@ -39,7 +39,14 @@ namespace TestMappers
                 city: "Roma"
             );
 
-            Assert.AreEqual(adopter, dto.ToDomain());
+            Assert.AreEqual(adopter.Fc, dto.ToDomain().Fc);
+            Assert.AreEqual(adopter.Name, dto.ToDomain().Name);
+            Assert.AreEqual(adopter.Surname, dto.ToDomain().Surname);
+            Assert.AreEqual(adopter.Phone, dto.ToDomain().Phone);
+            Assert.AreEqual(adopter.Email, dto.ToDomain().Email);
+            Assert.AreEqual(adopter.Address, dto.ToDomain().Address);
+            Assert.AreEqual(adopter.Cap, dto.ToDomain().Cap);
+            Assert.AreEqual(adopter.City, dto.ToDomain().City);
         }
         [TestMethod]
         public void TestToDto_WithEntityNull_ThrowsArgumentNullException()
@@ -73,7 +80,14 @@ namespace TestMappers
                 City: "Roma"
             );
 
-            Assert.AreEqual(dto, adopter.ToDto());
+            Assert.AreEqual(dto.Fc, adopter.ToDto().Fc);
+            Assert.AreEqual(dto.Name, adopter.ToDto().Name);
+            Assert.AreEqual(dto.Surname, adopter.ToDto().Surname);
+            Assert.AreEqual(dto.Phone, adopter.ToDto().Phone);
+            Assert.AreEqual(dto.Email, adopter.ToDto().Email);
+            Assert.AreEqual(dto.Address, adopter.ToDto().Address);
+            Assert.AreEqual(dto.Cap, adopter.ToDto().Cap);
+            Assert.AreEqual(dto.City, adopter.ToDto().City);
         }
     }
 }
