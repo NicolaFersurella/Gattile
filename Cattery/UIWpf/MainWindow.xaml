@@ -10,7 +10,7 @@
         <Menu Margin="0,0,460,0" Height="39" VerticalAlignment="Top">
 
             <MenuItem Header="Cats menu">
-                <Button Content="Add Cat"/>
+                <Button Content="Add Cat" Click="click_AddCat"/>
                 <Button Content="Manage Cats"/>
             </MenuItem>
 

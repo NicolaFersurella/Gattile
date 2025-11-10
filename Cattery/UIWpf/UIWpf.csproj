@@ -9,6 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Cat\**" />
+    <EmbeddedResource Remove="Cat\**" />
+    <None Remove="Cat\**" />
+    <Page Remove="Cat\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Application\Application.csproj" />
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
   </ItemGroup>

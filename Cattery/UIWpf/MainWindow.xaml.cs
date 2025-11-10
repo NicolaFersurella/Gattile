@@ -20,5 +20,11 @@ namespace UIWpf
         {
             InitializeComponent();
         }
+
+        public void click_AddCat(object sender, RoutedEventArgs e)
+        {
+            AddCat addCatWindow = new AddCat();
+            addCatWindow.ShowDialog();
+        }
     }
 }
