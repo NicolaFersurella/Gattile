@@ -2,6 +2,7 @@
 using Application.Mappers;
 using Application.UseCases;
 using Domain.Model.Entities;
+using Infrastructure.Persistence.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,10 +24,12 @@ namespace UIWpf
     /// </summary>
     public partial class AddCat : Window
     {
-        private ICatRepository _catRepository;
-        public AddCat()
+        public CatService catService;
+        public AddCat(CatService c)
         {
             InitializeComponent();
+
+            catService = c;
         }
         private void click_GotFocus(object sender, RoutedEventArgs e)
         {
@@ -38,8 +41,6 @@ namespace UIWpf
 
         private void click_AddCat(object sender, RoutedEventArgs e)
         {
-            CatService catService = new CatService(_catRepository);
-
             string name = txtCatName.Text;
 
             string breed = txtCatBreed.Text;

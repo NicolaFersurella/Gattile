@@ -11,17 +11,17 @@
 
             <MenuItem Header="Cats menu">
                 <Button Content="Add Cat" Click="click_AddCat"/>
-                <Button Content="Manage Cats"/>
+                <Button Content="Manage Cats" Click="click_ManageCats"/>
             </MenuItem>
 
             <MenuItem Header="Adopters menu">
-                <Button Content="Add Adopter"/>
-                <Button Content="Manage Adopters"/>
+                <Button Content="Add Adopter" Click="click_AddAdopter"/>
+                <Button Content="Manage Adopters" Click="click_ManageAdopters"/>
             </MenuItem>
 
             <MenuItem Header="Adoptions menu">
-                <Button Content="Add Adoption"/>
-                <Button Content="Manage Adoptions"/>
+                <Button Content="Add Adoption" Click="click_AddAdoption"/>
+                <Button Content="Manage Adoptions" Click="click_ManageAdoptions"/>
             </MenuItem>
 
         </Menu>
