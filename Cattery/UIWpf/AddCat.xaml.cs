@@ -24,12 +24,12 @@ namespace UIWpf
     /// </summary>
     public partial class AddCat : Window
     {
-        public CatService catService;
+        public CatService CatService;
         public AddCat(CatService c)
         {
             InitializeComponent();
 
-            catService = c;
+            CatService = c;
         }
         private void click_GotFocus(object sender, RoutedEventArgs e)
         {
@@ -38,7 +38,6 @@ namespace UIWpf
                 tb.Clear();
             }
         }
-
         private void click_AddCat(object sender, RoutedEventArgs e)
         {
             string name = txtCatName.Text;
@@ -60,7 +59,7 @@ namespace UIWpf
             Cat createdCat = new Cat(name, breed, gender, arrivalDate, leaveDate, birthDate, description);
 
             // richiamo il servizio per crearlo ma prima lo trasformo in un DTO
-            catService.CreateCat(createdCat.ToDto());
+            CatService.CreateCat(createdCat.ToDto());
         }
     }
 }

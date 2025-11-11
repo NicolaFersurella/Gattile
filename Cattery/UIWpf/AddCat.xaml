@@ -8,18 +8,18 @@
         Title="AddCat" Height="450" Width="800">
     <Grid>
 
-        <TextBox x:Name="txtCatName" HorizontalAlignment="Left" Margin="104,41,0,0" TextWrapping="Wrap" Text="Cat name" VerticalAlignment="Top" Width="120" GotFocus="click_GotFocus"/>
-        <TextBox x:Name="txtCatBreed" HorizontalAlignment="Left" Margin="251,41,0,0" TextWrapping="Wrap" Text="Cat breed" VerticalAlignment="Top" Width="120" GotFocus="click_GotFocus"/>
-        <TextBox x:Name="txtCatGender" HorizontalAlignment="Left" Margin="400,41,0,0" TextWrapping="Wrap" Text="Cat gender" VerticalAlignment="Top" Width="120" GotFocus="click_GotFocus"/>
-        <TextBox x:Name="txtCatDescription" HorizontalAlignment="Left" Margin="549,41,0,0" TextWrapping="Wrap" Text="Cat Description" VerticalAlignment="Top" Width="120" GotFocus="click_GotFocus"/>
+        <TextBox x:Name="txtCatName" HorizontalAlignment="Left" Margin="104,41,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="120" GotFocus="click_GotFocus"/>
+        <TextBox x:Name="txtCatBreed" HorizontalAlignment="Left" Margin="251,41,0,0" TextWrapping="Wrap" Text="Breed" VerticalAlignment="Top" Width="120" GotFocus="click_GotFocus"/>
+        <TextBox x:Name="txtCatGender" HorizontalAlignment="Left" Margin="400,41,0,0" TextWrapping="Wrap" Text="Gender" VerticalAlignment="Top" Width="120" GotFocus="click_GotFocus"/>
+        <TextBox x:Name="txtCatDescription" HorizontalAlignment="Left" Margin="549,41,0,0" TextWrapping="Wrap" Text="Description" VerticalAlignment="Top" Width="120" GotFocus="click_GotFocus"/>
 
         <DatePicker x:Name="dateCatArrivalDate" HorizontalAlignment="Left" Margin="189,105,0,0" VerticalAlignment="Top" Width="120"/>
         <DatePicker x:Name="dateCatLeaveDate" HorizontalAlignment="Left" Margin="336,105,0,0" VerticalAlignment="Top" Width="120"/>
         <DatePicker x:Name="dateCatBirthDate" HorizontalAlignment="Left" Margin="485,105,0,0" VerticalAlignment="Top" Width="120"/>
 
-        <Label Content="Cat arrival date" HorizontalAlignment="Left" Margin="204,79,0,0" VerticalAlignment="Top"/>
-        <Label Content="Cat leave date" HorizontalAlignment="Left" Margin="353,79,0,0" VerticalAlignment="Top"/>
-        <Label Content="Cat birth date" HorizontalAlignment="Left" Margin="504,79,0,0" VerticalAlignment="Top"/>
+        <Label Content="Arrival date" HorizontalAlignment="Left" Margin="204,79,0,0" VerticalAlignment="Top"/>
+        <Label Content="Leave date" HorizontalAlignment="Left" Margin="353,79,0,0" VerticalAlignment="Top"/>
+        <Label Content="Birth date" HorizontalAlignment="Left" Margin="504,79,0,0" VerticalAlignment="Top"/>
 
         <Button x:Name="btnAddCat" Content="Add" HorizontalAlignment="Center" Margin="0,285,0,0" VerticalAlignment="Top" Height="56" Width="142" Click="click_AddCat"/>
 

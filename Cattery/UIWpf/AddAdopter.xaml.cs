@@ -23,13 +23,12 @@ namespace UIWpf
     /// </summary>
     public partial class AddAdopter : Window
     {
-        //private IAdopterRepository _adopterRepository;
-        public AdopterService adopterService;
+        public AdopterService AdopterService;
         public AddAdopter(AdopterService a)
         {
             InitializeComponent();
 
-            adopterService = a; 
+            AdopterService = a; 
         }
         private void click_GotFocus(object sender, RoutedEventArgs e)
         {
@@ -38,7 +37,6 @@ namespace UIWpf
                 tb.Clear();
             }
         }
-
         private void click_AddAdopter(object sender, RoutedEventArgs e)
         {
             string fiscalCode = txtFiscalCode.Text;
@@ -58,10 +56,19 @@ namespace UIWpf
             string city = txtAdopterCity.Text;
 
             // creol'adottante
-            Adopter createdAdopter = new Adopter(new Domain.Model.ValueObjects.FiscalCode(fiscalCode), name, surname, new Domain.Model.ValueObjects.PhoneNumber(phoneNumber), new Domain.Model.ValueObjects.Email(email), address, new Domain.Model.ValueObjects.Cap(cap), city);
+            Adopter createdAdopter = new Adopter(
+                new Domain.Model.ValueObjects.FiscalCode(fiscalCode), 
+                name, 
+                surname, 
+                new Domain.Model.ValueObjects.PhoneNumber(phoneNumber), 
+                new Domain.Model.ValueObjects.Email(email), 
+                address, 
+                new Domain.Model.ValueObjects.Cap(cap), 
+                city
+            );
 
             // richiamo il servizio per crearlo ma prima lo trasformo in un DTO
-            adopterService.CreateAdopter(createdAdopter.ToDto());
+            AdopterService.CreateAdopter(createdAdopter.ToDto());
         }
     }
 }

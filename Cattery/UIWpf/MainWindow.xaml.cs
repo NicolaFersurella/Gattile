@@ -53,7 +53,7 @@ namespace UIWpf
         }
         public void click_AddAdoption(object sender, RoutedEventArgs e)
         {
-            AddAdoption addAdoptionWindow = new AddAdoption();
+            AddAdoption addAdoptionWindow = new AddAdoption(adoptionService);
             addAdoptionWindow.ShowDialog();
         }
         public void click_ManageAdoptions(object sender, RoutedEventArgs e)

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Application.UseCases;
+using Domain.Model.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,21 @@ namespace UIWpf
     /// </summary>
     public partial class AddAdoption : Window
     {
-        public AddAdoption()
+        AdoptionService AdoptionService;
+        public AddAdoption(AdoptionService a)
         {
             InitializeComponent();
+
+            AdoptionService = a;
+        }
+        private void click_AddAdoption(object sender, RoutedEventArgs e)
+        {
+            // ...
+
+            // creol'adozione
+
+            // richiamo il servizio per crearlo ma prima lo trasformo in un DTO
+            
         }
     }
 }
