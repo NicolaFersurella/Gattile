@@ -23,12 +23,16 @@ namespace UIWpf
     /// </summary>
     public partial class AddAdopter : Window
     {
+        public CatService CatService;
+        public AdoptionService AdoptionService;
         public AdopterService AdopterService;
-        public AddAdopter(AdopterService a)
+        public AddAdopter(CatService c, AdoptionService a, AdopterService ads)
         {
             InitializeComponent();
 
-            AdopterService = a; 
+            CatService = c;
+            AdoptionService = a;
+            AdopterService = ads;
         }
         private void click_GotFocus(object sender, RoutedEventArgs e)
         {
@@ -69,6 +73,36 @@ namespace UIWpf
 
             // richiamo il servizio per crearlo ma prima lo trasformo in un DTO
             AdopterService.CreateAdopter(createdAdopter.ToDto());
+        }
+        public void click_Dashboard(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
+        public void click_AddCat(object sender, RoutedEventArgs e)
+        {
+            AddCat addCatWindow = new AddCat(CatService, AdoptionService, AdopterService);
+            addCatWindow.Show();
+            this.Close();
+        }
+        public void click_ManageCats(object sender, RoutedEventArgs e)
+        {
+            ManageCats manageCatsWindow = new ManageCats(CatService, AdoptionService, AdopterService);
+            manageCatsWindow.Show();
+            this.Close();
+        }
+        public void click_AddAdoption(object sender, RoutedEventArgs e)
+        {
+            AddAdoption addAdoptionWindow = new AddAdoption(AdoptionService);
+            addAdoptionWindow.Show();
+            this.Close();
+        }
+        public void click_ManageAdoptions(object sender, RoutedEventArgs e)
+        {
+            ManageAdoptions manageAdoptionsWindow = new ManageAdoptions();
+            manageAdoptionsWindow.Show();
+            this.Close();
         }
     }
 }

@@ -25,6 +25,7 @@
             </MenuItem>
 
         </Menu>
+        
         <TextBlock x:Name="TxtTotalCats" TextWrapping="Wrap" Margin="97,79,305,306"/>
         <TextBlock x:Name="TxtMaleCats" HorizontalAlignment="Left" Margin="100,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="56" Width="395"/>
         <TextBlock x:Name="TxtFemaleCats" HorizontalAlignment="Left" Margin="134,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Height="66" Width="361"/>

@@ -8,6 +8,24 @@
         Title="AddCat" Height="450" Width="800">
     <Grid>
 
+        <Menu Margin="0,0,460,0" Height="36" VerticalAlignment="Top">
+
+            <MenuItem Header="Home">
+                <Button Content="Dashboard" Click="click_Dashboard"/>
+            </MenuItem>
+
+            <MenuItem Header="Adopters menu">
+                <Button Content="Add Adopter" Click="click_AddAdopter"/>
+                <Button Content="Manage Adopters" Click="click_ManageAdopters"/>
+            </MenuItem>
+
+            <MenuItem Header="Adoptions menu">
+                <Button Content="Add Adoption" Click="click_AddAdoption"/>
+                <Button Content="Manage Adoptions" Click="click_ManageAdoptions"/>
+            </MenuItem>
+
+        </Menu>
+
         <TextBox x:Name="txtCatName" HorizontalAlignment="Left" Margin="104,41,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="120" GotFocus="click_GotFocus"/>
         <TextBox x:Name="txtCatBreed" HorizontalAlignment="Left" Margin="251,41,0,0" TextWrapping="Wrap" Text="Breed" VerticalAlignment="Top" Width="120" GotFocus="click_GotFocus"/>
         <TextBox x:Name="txtCatGender" HorizontalAlignment="Left" Margin="400,41,0,0" TextWrapping="Wrap" Text="Gender" VerticalAlignment="Top" Width="120" GotFocus="click_GotFocus"/>

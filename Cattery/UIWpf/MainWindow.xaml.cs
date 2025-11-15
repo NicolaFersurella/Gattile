@@ -33,33 +33,39 @@ namespace UIWpf
 
         public void click_AddCat(object sender, RoutedEventArgs e)
         {
-            AddCat addCatWindow = new AddCat(catService);
-            addCatWindow.ShowDialog();
+            AddCat addCatWindow = new AddCat(catService, adoptionService, adopterService);
+            addCatWindow.Show();
+            this.Close();
         }
         public void click_ManageCats(object sender, RoutedEventArgs e)
         {
-            ManageCats manageCatsWindow = new ManageCats();
-            manageCatsWindow.ShowDialog();
+            ManageCats manageCatsWindow = new ManageCats(catService, adoptionService, adopterService);
+            manageCatsWindow.Show();
+            this.Close();
         }
         public void click_AddAdopter(object sender, RoutedEventArgs e)
         {
-            AddAdopter addAdopterWindow = new AddAdopter(adopterService);
-            addAdopterWindow.ShowDialog();
+            AddAdopter addAdopterWindow = new AddAdopter(catService, adoptionService, adopterService);
+            addAdopterWindow.Show();
+            this.Close();
         }
         public void click_ManageAdopters(object sender, RoutedEventArgs e)
         {
-            ManageAdopters manageAdoptersWindow = new ManageAdopters();
-            manageAdoptersWindow.ShowDialog();
+            ManageAdopters manageAdoptersWindow = new ManageAdopters(catService, adoptionService, adopterService);
+            manageAdoptersWindow.Show();
+            this.Close();
         }
         public void click_AddAdoption(object sender, RoutedEventArgs e)
         {
             AddAdoption addAdoptionWindow = new AddAdoption(adoptionService);
-            addAdoptionWindow.ShowDialog();
+            addAdoptionWindow.Show();
+            this.Close();
         }
         public void click_ManageAdoptions(object sender, RoutedEventArgs e)
         {
             ManageAdoptions manageAdoptionsWindow = new ManageAdoptions();
-            manageAdoptionsWindow.ShowDialog();
+            manageAdoptionsWindow.Show();
+            this.Close();
         }
     }
 }

@@ -1,8 +1,10 @@
-﻿using Application.Interfaces;
+﻿using Application.Dto;
+using Application.Interfaces;
 using Application.Mappers;
 using Application.UseCases;
 using Domain.Model.Entities;
 using Infrastructure.Persistence.Repositories;
+using Microsoft.VisualBasic.FileIO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,11 +27,15 @@ namespace UIWpf
     public partial class AddCat : Window
     {
         public CatService CatService;
-        public AddCat(CatService c)
+        public AdoptionService AdoptionService;
+        public AdopterService AdopterService;
+        public AddCat(CatService c, AdoptionService a, AdopterService ads)
         {
             InitializeComponent();
 
             CatService = c;
+            AdoptionService = a;
+            AdopterService = ads;
         }
         private void click_GotFocus(object sender, RoutedEventArgs e)
         {
@@ -44,8 +50,12 @@ namespace UIWpf
 
             string breed = txtCatBreed.Text;
 
+            Gender gender = Gender.FEMALE;
             string genderText = txtCatGender.Text;
-            Gender gender = Enum.Parse<Gender>(genderText);
+            if (genderText == "maschio" || genderText == "Maschio" || genderText == "male" || genderText == "Male")
+            {
+                gender = Gender.MALE;
+            }
 
             string description = txtCatDescription.Text;
 
@@ -55,11 +65,41 @@ namespace UIWpf
 
             DateTime? birthDate = dateCatBirthDate.SelectedDate;
 
-            // creo il gatto
-            Cat createdCat = new Cat(name, breed, gender, arrivalDate, leaveDate, birthDate, description);
+            // creo il gatto dto
+            CatDto createdCatDto = new CatDto(name, breed, gender, arrivalDate, leaveDate, birthDate, description);
 
             // richiamo il servizio per crearlo ma prima lo trasformo in un DTO
-            CatService.CreateCat(createdCat.ToDto());
+            CatService.CreateCat(createdCatDto);
+        }
+        public void click_Dashboard(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
+        public void click_AddAdopter(object sender, RoutedEventArgs e)
+        {
+            AddAdopter addAdopterWindow = new AddAdopter(CatService, AdoptionService, AdopterService);
+            addAdopterWindow.Show();
+            this.Close();
+        }
+        public void click_ManageAdopters(object sender, RoutedEventArgs e)
+        {
+            ManageAdopters manageAdoptersWindow = new ManageAdopters(CatService, AdoptionService, AdopterService);
+            manageAdoptersWindow.Show();
+            this.Close();
+        }
+        public void click_AddAdoption(object sender, RoutedEventArgs e)
+        {
+            AddAdoption addAdoptionWindow = new AddAdoption(AdoptionService);
+            addAdoptionWindow.Show();
+            this.Close();
+        }
+        public void click_ManageAdoptions(object sender, RoutedEventArgs e)
+        {
+            ManageAdoptions manageAdoptionsWindow = new ManageAdoptions();
+            manageAdoptionsWindow.Show();
+            this.Close();
         }
     }
 }
