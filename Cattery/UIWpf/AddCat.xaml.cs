@@ -50,12 +50,7 @@ namespace UIWpf
 
             string breed = txtCatBreed.Text;
 
-            Gender gender = Gender.FEMALE;
-            string genderText = txtCatGender.Text;
-            if (genderText == "maschio" || genderText == "Maschio" || genderText == "male" || genderText == "Male")
-            {
-                gender = Gender.MALE;
-            }
+            Gender gender = (Gender)comboGender.SelectedItem;
 
             string description = txtCatDescription.Text;
 
@@ -70,6 +65,8 @@ namespace UIWpf
 
             // richiamo il servizio per crearlo ma prima lo trasformo in un DTO
             CatService.CreateCat(createdCatDto);
+
+            MessageBox.Show("Gatto aggiunto con successo!");
         }
         public void click_Dashboard(object sender, RoutedEventArgs e)
         {
@@ -91,13 +88,13 @@ namespace UIWpf
         }
         public void click_AddAdoption(object sender, RoutedEventArgs e)
         {
-            AddAdoption addAdoptionWindow = new AddAdoption(AdoptionService);
+            AddAdoption addAdoptionWindow = new AddAdoption(AdoptionService, CatService, AdopterService);
             addAdoptionWindow.Show();
             this.Close();
         }
         public void click_ManageAdoptions(object sender, RoutedEventArgs e)
         {
-            ManageAdoptions manageAdoptionsWindow = new ManageAdoptions();
+            ManageAdoptions manageAdoptionsWindow = new ManageAdoptions(CatService, AdoptionService, AdopterService);
             manageAdoptionsWindow.Show();
             this.Close();
         }

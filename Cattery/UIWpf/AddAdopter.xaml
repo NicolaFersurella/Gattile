@@ -8,7 +8,7 @@
         Title="AddAdopter" Height="450" Width="800">
     <Grid>
 
-        <Menu Margin="0,0,460,0" Height="36" VerticalAlignment="Top">
+        <Menu Height="36" VerticalAlignment="Top" HorizontalAlignment="Left" Width="340">
 
             <MenuItem Header="Home">
                 <Button Content="Dashboard" Click="click_Dashboard"/>
@@ -26,14 +26,14 @@
 
         </Menu>
 
-        <TextBox x:Name="txtFiscalCode" HorizontalAlignment="Left" Margin="104,41,0,0" TextWrapping="Wrap" Text="Fiscal code" VerticalAlignment="Top" Width="120" GotFocus="click_GotFocus"/>
-        <TextBox x:Name="txtAdopterName" HorizontalAlignment="Left" Margin="251,41,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="120" GotFocus="click_GotFocus"/>
-        <TextBox x:Name="txtAdopterSurname" HorizontalAlignment="Left" Margin="400,41,0,0" TextWrapping="Wrap" Text="Surname" VerticalAlignment="Top" Width="120" GotFocus="click_GotFocus"/>
-        <TextBox x:Name="txtAdopterPhoneNumber" HorizontalAlignment="Left" Margin="549,41,0,0" TextWrapping="Wrap" Text="Phone number" VerticalAlignment="Top" Width="120" GotFocus="click_GotFocus"/>
-        <TextBox x:Name="txtAdopterEmail" HorizontalAlignment="Left" Margin="104,111,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Width="120" GotFocus="click_GotFocus"/>
-        <TextBox x:Name="txtAdopterAddress" HorizontalAlignment="Left" Margin="251,111,0,0" TextWrapping="Wrap" Text="Address" VerticalAlignment="Top" Width="120" GotFocus="click_GotFocus"/>
-        <TextBox x:Name="txtAdopterCap" HorizontalAlignment="Left" Margin="400,111,0,0" TextWrapping="Wrap" Text="CAP" VerticalAlignment="Top" Width="120" GotFocus="click_GotFocus"/>
-        <TextBox x:Name="txtAdopterCity" HorizontalAlignment="Left" Margin="549,111,0,0" TextWrapping="Wrap" Text="City" VerticalAlignment="Top" Width="120" GotFocus="click_GotFocus"/>
+        <TextBox x:Name="txtFiscalCode" HorizontalAlignment="Left" Margin="104,94,0,0" TextWrapping="Wrap" Text="Fiscal code" VerticalAlignment="Top" Width="120" GotFocus="click_GotFocus" Height="25"/>
+        <TextBox x:Name="txtAdopterName" HorizontalAlignment="Left" Margin="251,94,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="120" GotFocus="click_GotFocus" Height="25"/>
+        <TextBox x:Name="txtAdopterSurname" HorizontalAlignment="Left" Margin="400,94,0,0" TextWrapping="Wrap" Text="Surname" VerticalAlignment="Top" Width="120" GotFocus="click_GotFocus" Height="25"/>
+        <TextBox x:Name="txtAdopterPhoneNumber" HorizontalAlignment="Left" Margin="549,94,0,0" TextWrapping="Wrap" Text="Phone number" VerticalAlignment="Top" Width="120" GotFocus="click_GotFocus" Height="25"/>
+        <TextBox x:Name="txtAdopterEmail" HorizontalAlignment="Left" Margin="104,192,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Width="120" GotFocus="click_GotFocus" Height="25"/>
+        <TextBox x:Name="txtAdopterAddress" HorizontalAlignment="Left" Margin="251,192,0,0" TextWrapping="Wrap" Text="Address" VerticalAlignment="Top" Width="120" GotFocus="click_GotFocus" Height="25"/>
+        <TextBox x:Name="txtAdopterCap" HorizontalAlignment="Left" Margin="400,192,0,0" TextWrapping="Wrap" Text="CAP" VerticalAlignment="Top" Width="120" GotFocus="click_GotFocus" Height="25"/>
+        <TextBox x:Name="txtAdopterCity" HorizontalAlignment="Left" Margin="549,192,0,0" TextWrapping="Wrap" Text="City" VerticalAlignment="Top" Width="120" GotFocus="click_GotFocus" Height="25"/>
 
         <Button x:Name="btnAddAdopter" Content="Add" HorizontalAlignment="Center" Margin="0,285,0,0" VerticalAlignment="Top" Height="56" Width="142" Click="click_AddAdopter"/>
 

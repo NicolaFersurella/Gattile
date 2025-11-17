@@ -7,6 +7,34 @@
         mc:Ignorable="d"
         Title="AddAdoption" Height="450" Width="800">
     <Grid>
-        
+
+        <Menu Height="36" VerticalAlignment="Top" HorizontalAlignment="Left" Width="340">
+
+            <MenuItem Header="Home">
+                <Button Content="Dashboard" Click="click_Dashboard"/>
+            </MenuItem>
+
+            <MenuItem Header="Cats menu">
+                <Button Content="Add Cat" Click="click_AddCat"/>
+                <Button Content="Manage Cats" Click="click_ManageCats"/>
+            </MenuItem>
+
+            <MenuItem Header="Adopters menu">
+                <Button Content="Add Adopter" Click="click_AddAdopter"/>
+                <Button Content="Manage Adopters" Click="click_ManageAdopters"/>
+            </MenuItem>
+
+        </Menu>
+
+        <ComboBox HorizontalAlignment="Left" Margin="200,105,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox HorizontalAlignment="Left" Margin="200,193,0,0" VerticalAlignment="Top" Width="120"/>
+
+        <Label Content="Cat" HorizontalAlignment="Left" Margin="84,105,0,0" VerticalAlignment="Top"/>
+        <Label Content="Adopter" HorizontalAlignment="Left" Margin="84,191,0,0" VerticalAlignment="Top"/>
+        <Label Content="Adoption date" HorizontalAlignment="Left" Margin="84,270,0,0" VerticalAlignment="Top"/>
+
+        <DatePicker x:Name="dateCatArrivalDate" HorizontalAlignment="Left" Margin="200,267,0,0" VerticalAlignment="Top" Width="160" Height="32"/>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="555,173,0,0" VerticalAlignment="Top" Width="104" Height="55" Click="click_AddAdoption"/>
+
     </Grid>
 </Window>

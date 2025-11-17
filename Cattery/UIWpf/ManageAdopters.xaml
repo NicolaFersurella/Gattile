@@ -8,7 +8,7 @@
         Title="ManageAdopters" Height="450" Width="800">
     <Grid>
 
-        <Menu Margin="0,0,460,0" Height="36" VerticalAlignment="Top">
+        <Menu Height="36" VerticalAlignment="Top" HorizontalAlignment="Left" Width="340">
 
             <MenuItem Header="Home">
                 <Button Content="Dashboard" Click="click_Dashboard"/>

@@ -51,13 +51,13 @@ namespace UIWpf
         }
         public void click_AddAdoption(object sender, RoutedEventArgs e)
         {
-            AddAdoption addAdoptionWindow = new AddAdoption(AdoptionService);
+            AddAdoption addAdoptionWindow = new AddAdoption(AdoptionService, CatService, AdopterService);
             addAdoptionWindow.Show();
             this.Close();
         }
         public void click_ManageAdoptions(object sender, RoutedEventArgs e)
         {
-            ManageAdoptions manageAdoptionsWindow = new ManageAdoptions();
+            ManageAdoptions manageAdoptionsWindow = new ManageAdoptions(CatService, AdoptionService, AdopterService);
             manageAdoptionsWindow.Show();
             this.Close();
         }

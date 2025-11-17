@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Application.UseCases;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,46 @@ namespace UIWpf
     /// </summary>
     public partial class ManageAdoptions : Window
     {
-        public ManageAdoptions()
+        public CatService CatService;
+        public AdoptionService AdoptionService;
+        public AdopterService AdopterService;
+        public ManageAdoptions(CatService c, AdoptionService a, AdopterService ads)
         {
             InitializeComponent();
+
+            CatService = c;
+            AdoptionService = a;
+            AdopterService = ads;
+        }
+        public void click_Dashboard(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
+        public void click_AddCat(object sender, RoutedEventArgs e)
+        {
+            AddCat addCatWindow = new AddCat(CatService, AdoptionService, AdopterService);
+            addCatWindow.Show();
+            this.Close();
+        }
+        public void click_ManageCats(object sender, RoutedEventArgs e)
+        {
+            ManageCats manageCatsWindow = new ManageCats(CatService, AdoptionService, AdopterService);
+            manageCatsWindow.Show();
+            this.Close();
+        }
+        public void click_AddAdopter(object sender, RoutedEventArgs e)
+        {
+            AddAdopter addAdoptionWindow = new AddAdopter(CatService, AdoptionService, AdopterService);
+            addAdoptionWindow.Show();
+            this.Close();
+        }
+        public void click_ManageAdopters(object sender, RoutedEventArgs e)
+        {
+            ManageAdopters manageAdoptersWindow = new ManageAdopters(CatService, AdoptionService, AdopterService);
+            manageAdoptersWindow.Show();
+            this.Close();
         }
     }
 }

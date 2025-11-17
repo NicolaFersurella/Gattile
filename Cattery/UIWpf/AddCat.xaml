@@ -8,7 +8,7 @@
         Title="AddCat" Height="450" Width="800">
     <Grid>
 
-        <Menu Margin="0,0,460,0" Height="36" VerticalAlignment="Top">
+        <Menu Height="36" VerticalAlignment="Top" HorizontalAlignment="Left" Width="340">
 
             <MenuItem Header="Home">
                 <Button Content="Dashboard" Click="click_Dashboard"/>
@@ -26,20 +26,25 @@
 
         </Menu>
 
-        <TextBox x:Name="txtCatName" HorizontalAlignment="Left" Margin="104,41,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="120" GotFocus="click_GotFocus"/>
-        <TextBox x:Name="txtCatBreed" HorizontalAlignment="Left" Margin="251,41,0,0" TextWrapping="Wrap" Text="Breed" VerticalAlignment="Top" Width="120" GotFocus="click_GotFocus"/>
-        <TextBox x:Name="txtCatGender" HorizontalAlignment="Left" Margin="400,41,0,0" TextWrapping="Wrap" Text="Gender" VerticalAlignment="Top" Width="120" GotFocus="click_GotFocus"/>
-        <TextBox x:Name="txtCatDescription" HorizontalAlignment="Left" Margin="549,41,0,0" TextWrapping="Wrap" Text="Description" VerticalAlignment="Top" Width="120" GotFocus="click_GotFocus"/>
+        <TextBox x:Name="txtCatName" HorizontalAlignment="Left" Margin="57,103,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="120" GotFocus="click_GotFocus" Height="23"/>
+        <TextBox x:Name="txtCatBreed" HorizontalAlignment="Left" Margin="204,103,0,0" TextWrapping="Wrap" Text="Breed" VerticalAlignment="Top" Width="120" GotFocus="click_GotFocus" Height="23"/>
+        <ComboBox x:Name="comboGender" Margin="400,99,0,0" VerticalAlignment="Top" Height="33" HorizontalAlignment="Left" Width="120">
+            <ComboBoxItem Content = "Male"/>
+            <ComboBoxItem Content = "Female"/>
+        </ComboBox>
+        <TextBox x:Name="txtCatDescription" HorizontalAlignment="Left" Margin="549,103,0,0" TextWrapping="Wrap" Text="Description" VerticalAlignment="Top" Width="120" GotFocus="click_GotFocus" Height="23"/>
 
-        <DatePicker x:Name="dateCatArrivalDate" HorizontalAlignment="Left" Margin="189,105,0,0" VerticalAlignment="Top" Width="120"/>
-        <DatePicker x:Name="dateCatLeaveDate" HorizontalAlignment="Left" Margin="336,105,0,0" VerticalAlignment="Top" Width="120"/>
-        <DatePicker x:Name="dateCatBirthDate" HorizontalAlignment="Left" Margin="485,105,0,0" VerticalAlignment="Top" Width="120"/>
+        <DatePicker x:Name="dateCatArrivalDate" Margin="164,187,0,0" HorizontalAlignment="Left" Width="145" Height="32" VerticalAlignment="Top"/>
+        <DatePicker x:Name="dateCatLeaveDate" HorizontalAlignment="Left" Margin="325,187,0,0" Width="146" Height="32" VerticalAlignment="Top"/>
+        <DatePicker x:Name="dateCatBirthDate" HorizontalAlignment="Left" Margin="485,187,0,0" Width="144" Height="32" VerticalAlignment="Top"/>
 
-        <Label Content="Arrival date" HorizontalAlignment="Left" Margin="204,79,0,0" VerticalAlignment="Top"/>
-        <Label Content="Leave date" HorizontalAlignment="Left" Margin="353,79,0,0" VerticalAlignment="Top"/>
-        <Label Content="Birth date" HorizontalAlignment="Left" Margin="504,79,0,0" VerticalAlignment="Top"/>
+        <Label Content="Arrival date" HorizontalAlignment="Left" Margin="204,153,0,0" VerticalAlignment="Top" Height="34"/>
+        <Label Content="Leave date" HorizontalAlignment="Left" Margin="353,153,0,0" VerticalAlignment="Top" Height="34"/>
+        <Label Content="Birth date" HorizontalAlignment="Left" Margin="517,152,0,0" VerticalAlignment="Top" Height="34"/>
 
         <Button x:Name="btnAddCat" Content="Add" HorizontalAlignment="Center" Margin="0,285,0,0" VerticalAlignment="Top" Height="56" Width="142" Click="click_AddCat"/>
+        <Label Content="Gender" HorizontalAlignment="Left" Margin="346,102,0,0" VerticalAlignment="Top"/>
+
 
     </Grid>
 </Window>

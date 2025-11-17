@@ -1,4 +1,5 @@
-﻿using Application.Interfaces;
+﻿using Application.Dto;
+using Application.Interfaces;
 using Application.Mappers;
 using Application.UseCases;
 using Domain.Model.Entities;
@@ -59,20 +60,13 @@ namespace UIWpf
 
             string city = txtAdopterCity.Text;
 
-            // creol'adottante
-            Adopter createdAdopter = new Adopter(
-                new Domain.Model.ValueObjects.FiscalCode(fiscalCode), 
-                name, 
-                surname, 
-                new Domain.Model.ValueObjects.PhoneNumber(phoneNumber), 
-                new Domain.Model.ValueObjects.Email(email), 
-                address, 
-                new Domain.Model.ValueObjects.Cap(cap), 
-                city
-            );
+            // creol'adottante dto
+            AdopterDto createdAdopter = new AdopterDto(fiscalCode, name, surname, phoneNumber, email, address, cap, city);
 
             // richiamo il servizio per crearlo ma prima lo trasformo in un DTO
-            AdopterService.CreateAdopter(createdAdopter.ToDto());
+            AdopterService.CreateAdopter(createdAdopter);
+
+            MessageBox.Show("Adottante aggiunto con successo!");
         }
         public void click_Dashboard(object sender, RoutedEventArgs e)
         {
@@ -94,13 +88,13 @@ namespace UIWpf
         }
         public void click_AddAdoption(object sender, RoutedEventArgs e)
         {
-            AddAdoption addAdoptionWindow = new AddAdoption(AdoptionService);
+            AddAdoption addAdoptionWindow = new AddAdoption(AdoptionService, CatService, AdopterService);
             addAdoptionWindow.Show();
             this.Close();
         }
         public void click_ManageAdoptions(object sender, RoutedEventArgs e)
         {
-            ManageAdoptions manageAdoptionsWindow = new ManageAdoptions();
+            ManageAdoptions manageAdoptionsWindow = new ManageAdoptions(CatService, AdoptionService, AdopterService);
             manageAdoptionsWindow.Show();
             this.Close();
         }

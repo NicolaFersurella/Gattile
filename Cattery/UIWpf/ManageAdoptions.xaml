@@ -7,6 +7,24 @@
         mc:Ignorable="d"
         Title="ManageAdoptions" Height="450" Width="800">
     <Grid>
-        
+
+        <Menu Height="36" VerticalAlignment="Top" HorizontalAlignment="Left" Width="340">
+
+            <MenuItem Header="Home">
+                <Button Content="Dashboard" Click="click_Dashboard"/>
+            </MenuItem>
+
+            <MenuItem Header="Cats menu">
+                <Button Content="Add Cat" Click="click_AddCat"/>
+                <Button Content="Manage Cats" Click="click_ManageCats"/>
+            </MenuItem>
+
+            <MenuItem Header="Adopters menu">
+                <Button Content="Add Adopter" Click="click_AddAdopter"/>
+                <Button Content="Manage Adopters" Click="click_ManageAdopters"/>
+            </MenuItem>
+
+        </Menu>
+
     </Grid>
 </Window>
